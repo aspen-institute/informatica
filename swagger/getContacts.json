@@ -1,0 +1,333 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "api-platform.cvent.com",
+  "basePath" : "/ea",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/contacts" : {
+      "get" : {
+        "tags" : [ "getContacts" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "getContacts",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "after",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "token",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/getContacts"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "getContacts##paging##_links##next" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getContacts##paging##_links##self" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getContacts##paging##_links" : {
+      "properties" : {
+        "next" : {
+          "$ref" : "#/definitions/getContacts##paging##_links##next"
+        },
+        "self" : {
+          "$ref" : "#/definitions/getContacts##paging##_links##self"
+        }
+      }
+    },
+    "getContacts##paging" : {
+      "properties" : {
+        "_links" : {
+          "$ref" : "#/definitions/getContacts##paging##_links"
+        },
+        "limit" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "totalCount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "currentToken" : {
+          "type" : "string"
+        },
+        "nextToken" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getContacts##data##workAddress" : {
+      "properties" : {
+        "region" : {
+          "type" : "string"
+        },
+        "regionCode" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "address1" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "postalCode" : {
+          "type" : "string"
+        },
+        "address2" : {
+          "type" : "string"
+        },
+        "address3" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getContacts##data##customFields" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "order" : {
+          "type" : "number"
+        }
+      }
+    },
+    "getContacts##data##optOut" : {
+      "properties" : {
+        "optedOut" : {
+          "type" : "boolean"
+        },
+        "date" : {
+          "type" : "string"
+        },
+        "by" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getContacts##data##type" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getContacts##data##_links##twitterUrl" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getContacts##data##_links##facebookUrl" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getContacts##data##_links" : {
+      "properties" : {
+        "profilePicture" : {
+          "$ref" : "#/definitions/getContacts##data##_links##profilePicture"
+        },
+        "twitterUrl" : {
+          "$ref" : "#/definitions/getContacts##data##_links##twitterUrl"
+        },
+        "facebookUrl" : {
+          "$ref" : "#/definitions/getContacts##data##_links##facebookUrl"
+        }
+      }
+    },
+    "getContacts##data##_links##profilePicture" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getContacts##data##homeAddress" : {
+      "properties" : {
+        "region" : {
+          "type" : "string"
+        },
+        "regionCode" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "address1" : {
+          "type" : "string"
+        },
+        "address2" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "postalCode" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getContacts##data" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "created" : {
+          "type" : "string"
+        },
+        "createdBy" : {
+          "type" : "string"
+        },
+        "lastModified" : {
+          "type" : "string"
+        },
+        "lastModifiedBy" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+		"dateOfBirth": {
+          "type": "string"
+        },
+		"middleName": {
+          "type": "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "ccEmail" : {
+          "type" : "string"
+        },
+        "company" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "primaryAddressType" : {
+          "type" : "string"
+        },
+        "homePhone" : {
+          "type" : "string"
+        },
+        "workAddress" : {
+          "$ref" : "#/definitions/getContacts##data##workAddress"
+        },
+        "customFields" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getContacts##data##customFields"
+          }
+        },
+        "deleted" : {
+          "type" : "boolean"
+        },
+        "optOut" : {
+          "$ref" : "#/definitions/getContacts##data##optOut"
+        },
+        "type" : {
+          "$ref" : "#/definitions/getContacts##data##type"
+        },
+        "workPhone" : {
+          "type" : "string"
+        },
+        "mobilePhone" : {
+          "type" : "string"
+        },
+        "_links" : {
+          "$ref" : "#/definitions/getContacts##data##_links"
+        },
+        "nickname" : {
+          "type" : "string"
+        },
+        "homeAddress" : {
+          "$ref" : "#/definitions/getContacts##data##homeAddress"
+        }
+      }
+    },
+    "getContacts" : {
+      "properties" : {
+        "paging" : {
+          "$ref" : "#/definitions/getContacts##paging"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getContacts##data"
+          }
+        }
+      }
+    }
+  }
+}

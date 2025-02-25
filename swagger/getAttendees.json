@@ -1,0 +1,443 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "api-platform.cvent.com",
+  "basePath" : "/ea",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/attendees" : {
+      "get" : {
+        "tags" : [ "getAttendees" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "getAttendees",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "filter",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "after",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "token",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/getAttendees"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "getAttendees##paging##_links##next" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##paging##_links##self" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##paging##_links" : {
+      "properties" : {
+        "next" : {
+          "$ref" : "#/definitions/getAttendees##paging##_links##next"
+        },
+        "self" : {
+          "$ref" : "#/definitions/getAttendees##paging##_links##self"
+        }
+      }
+    },
+    "getAttendees##paging" : {
+      "properties" : {
+        "_links" : {
+          "$ref" : "#/definitions/getAttendees##paging##_links"
+        },
+        "limit" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "totalCount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "currentToken" : {
+          "type" : "string"
+        },
+        "nextToken" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##data##event" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##data##contact##optOut" : {
+      "properties" : {
+        "optedOut" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "getAttendees##data##contact" : {
+      "properties" : {
+        "createdBy" : {
+          "type" : "string"
+        },
+        "lastModified" : {
+          "type" : "string"
+        },
+        "lastModifiedBy" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "ccEmail" : {
+          "type" : "string"
+        },
+        "company" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "type" : {
+          "$ref" : "#/definitions/getAttendees##data##contact##type"
+        },
+        "primaryAddressType" : {
+          "type" : "string"
+        },
+        "homePhone" : {
+          "type" : "string"
+        },
+        "workAddress" : {
+          "$ref" : "#/definitions/getAttendees##data##contact##workAddress"
+        },
+        "optOut" : {
+          "$ref" : "#/definitions/getAttendees##data##contact##optOut"
+        },
+        "mobilePhone" : {
+          "type" : "string"
+        },
+        "deleted" : {
+          "type" : "boolean"
+        },
+        "customFields" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getAttendees##data##contact##customFields"
+          }
+        }
+      }
+    },
+    "getAttendees##data##invitationList" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##data##group" : {
+      "properties" : {
+        "leader" : {
+          "type" : "boolean"
+        },
+        "member" : {
+          "type" : "boolean"
+        },
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##data##contact##type" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##data##contact##workAddress" : {
+      "properties" : {
+        "region" : {
+          "type" : "string"
+        },
+        "regionCode" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "address1" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "postalCode" : {
+          "type" : "string"
+        },
+        "address2" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##data##registrationPath" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##data##registrationType" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##data##admissionItem" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##data##answers##question" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##data##answers" : {
+      "properties" : {
+        "question" : {
+          "$ref" : "#/definitions/getAttendees##data##answers##question"
+        },
+        "value" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "getAttendees##data##contact##customFields" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "order" : {
+          "type" : "number"
+        }
+      }
+    },
+    "getAttendees##data##questions" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "order" : {
+          "type" : "number"
+        }
+      }
+    },
+    "getAttendees##data" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "event" : {
+          "$ref" : "#/definitions/getAttendees##data##event"
+        },
+        "contact" : {
+          "$ref" : "#/definitions/getAttendees##data##contact"
+        },
+        "checkedIn" : {
+          "type" : "boolean"
+        },
+        "invitationList" : {
+          "$ref" : "#/definitions/getAttendees##data##invitationList"
+        },
+        "guest" : {
+          "type" : "boolean"
+        },
+        "group" : {
+          "$ref" : "#/definitions/getAttendees##data##group"
+        },
+        "unsubscribed" : {
+          "type" : "boolean"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "registrationLastModified" : {
+          "type" : "string"
+        },
+        "invitedBy" : {
+          "type" : "string"
+        },
+        "responseMethod" : {
+          "type" : "string"
+        },
+        "created" : {
+          "type" : "string"
+        },
+        "createdBy" : {
+          "type" : "string"
+        },
+        "lastModified" : {
+          "type" : "string"
+        },
+        "lastModifiedBy" : {
+          "type" : "string"
+        },
+        "testRecord" : {
+          "type" : "boolean"
+        },
+        "attendeeLastModified" : {
+          "type" : "string"
+        },
+        "confirmationNumber" : {
+          "type" : "string"
+        },
+        "registrationPath" : {
+          "$ref" : "#/definitions/getAttendees##data##registrationPath"
+        },
+        "registrationType" : {
+          "$ref" : "#/definitions/getAttendees##data##registrationType"
+        },
+        "admissionItem" : {
+          "$ref" : "#/definitions/getAttendees##data##admissionItem"
+        },
+        "note" : {
+          "type" : "string"
+        },
+        "registeredAt" : {
+          "type" : "string"
+        },
+        "answers" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getAttendees##data##answers"
+          }
+        },
+        "questions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getAttendees##data##questions"
+          }
+        }
+      }
+    },
+    "getAttendees" : {
+      "properties" : {
+        "paging" : {
+          "$ref" : "#/definitions/getAttendees##paging"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getAttendees##data"
+          }
+        }
+      }
+    }
+  }
+}

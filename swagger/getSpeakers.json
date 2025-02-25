@@ -1,0 +1,245 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "api-platform.cvent.com",
+  "basePath" : "/ea",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/speakers" : {
+      "get" : {
+        "tags" : [ "getSpeakers" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "getSpeakers",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "after",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "token",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/getSpeakers"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "getSpeakers##paging##_links##next" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getSpeakers##paging##_links##self" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getSpeakers##paging##_links" : {
+      "properties" : {
+        "next" : {
+          "$ref" : "#/definitions/getSpeakers##paging##_links##next"
+        },
+        "self" : {
+          "$ref" : "#/definitions/getSpeakers##paging##_links##self"
+        }
+      }
+    },
+    "getSpeakers##paging" : {
+      "properties" : {
+        "_links" : {
+          "$ref" : "#/definitions/getSpeakers##paging##_links"
+        },
+        "limit" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "totalCount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "currentToken" : {
+          "type" : "string"
+        },
+        "nextToken" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getSpeakers##data##event" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getSpeakers##data##category" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getSpeakers##data##links##profilePicture" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getSpeakers##data##links" : {
+      "properties" : {
+        "profilePicture" : {
+          "$ref" : "#/definitions/getSpeakers##data##links##profilePicture"
+        },
+        "twitterUrl" : {
+          "$ref" : "#/definitions/getSpeakers##data##links##twitterUrl"
+        },
+        "linkedInUrl" : {
+          "$ref" : "#/definitions/getSpeakers##data##links##linkedInUrl"
+        },
+        "facebookUrl" : {
+          "$ref" : "#/definitions/getSpeakers##data##links##facebookUrl"
+        }
+      }
+    },
+    "getSpeakers##data##contact" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getSpeakers##data##links##twitterUrl" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getSpeakers##data##links##facebookUrl" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getSpeakers##data##links##linkedInUrl" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getSpeakers##data" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "order" : {
+          "type" : "number"
+        },
+        "created" : {
+          "type" : "string"
+        },
+        "createdBy" : {
+          "type" : "string"
+        },
+        "lastModified" : {
+          "type" : "string"
+        },
+        "lastModifiedBy" : {
+          "type" : "string"
+        },
+        "event" : {
+          "$ref" : "#/definitions/getSpeakers##data##event"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "company" : {
+          "type" : "string"
+        },
+        "category" : {
+          "$ref" : "#/definitions/getSpeakers##data##category"
+        },
+        "links" : {
+          "$ref" : "#/definitions/getSpeakers##data##links"
+        },
+        "visibility" : {
+          "type" : "boolean"
+        },
+        "biography" : {
+          "type" : "string"
+        },
+        "featured" : {
+          "type" : "boolean"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "contact" : {
+          "$ref" : "#/definitions/getSpeakers##data##contact"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "internalNote" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getSpeakers" : {
+      "properties" : {
+        "paging" : {
+          "$ref" : "#/definitions/getSpeakers##paging"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getSpeakers##data"
+          }
+        }
+      }
+    }
+  }
+}

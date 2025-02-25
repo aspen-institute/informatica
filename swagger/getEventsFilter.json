@@ -1,0 +1,432 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "api-platform.cvent.com",
+  "basePath" : "/ea",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/events/filter" : {
+      "post" : {
+        "tags" : [ "getEventsFilter" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "getEventsFilter",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "after",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        },{
+          "name" : "limit",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "number",
+          "format" : "int32"
+        }, {
+          "name" : "token",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "description" : null,
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/getEventsFilter_Request##body"
+          }
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/getEventsFilter"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "getEventsFilter##paging##_links##next" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter##paging##_links##self" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter##paging##_links" : {
+      "properties" : {
+        "next" : {
+          "$ref" : "#/definitions/getEventsFilter##paging##_links##next"
+        },
+        "self" : {
+          "$ref" : "#/definitions/getEventsFilter##paging##_links##self"
+        }
+      }
+    },
+    "getEventsFilter##paging" : {
+      "properties" : {
+        "_links" : {
+          "$ref" : "#/definitions/getEventsFilter##paging##_links"
+        },
+        "limit" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "totalCount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "currentToken" : {
+          "type" : "string"
+        },
+        "nextToken" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter##data##venues##address" : {
+      "properties" : {
+        "region" : {
+          "type" : "string"
+        },
+        "regionCode" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "latitude" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "longitude" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "address1" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "postalCode" : {
+          "type" : "string"
+        },
+        "address2" : {
+          "type" : "string"
+        },
+        "address3" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter##data##venues" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "address" : {
+          "$ref" : "#/definitions/getEventsFilter##data##venues##address"
+        }
+      }
+    },
+    "getEventsFilter##data##planners" : {
+      "properties" : {
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "deleted" : {
+          "type" : "boolean"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "company" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter##data##category" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter##data##_links##invitation" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter##data##_links##agenda" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter##data##_links##summary" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter##data##_links##registration" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter##data##_links" : {
+      "properties" : {
+        "invitation" : {
+          "$ref" : "#/definitions/getEventsFilter##data##_links##invitation"
+        },
+        "agenda" : {
+          "$ref" : "#/definitions/getEventsFilter##data##_links##agenda"
+        },
+        "summary" : {
+          "$ref" : "#/definitions/getEventsFilter##data##_links##summary"
+        },
+        "registration" : {
+          "$ref" : "#/definitions/getEventsFilter##data##_links##registration"
+        }
+      }
+    },
+    "getEventsFilter##data##stakeholders" : {
+      "properties" : {
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "deleted" : {
+          "type" : "boolean"
+        },
+        "createdBy" : {
+          "type" : "string"
+        },
+        "lastModifiedBy" : {
+          "type" : "string"
+        },
+        "company" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter##data##customFields" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "order" : {
+          "type" : "number"
+        }
+      }
+    },
+    "getEventsFilter##data" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "virtual" : {
+          "type" : "boolean"
+        },
+        "format" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "start" : {
+          "type" : "string"
+        },
+        "end" : {
+          "type" : "string"
+        },
+        "closeAfter" : {
+          "type" : "string"
+        },
+        "archiveAfter" : {
+          "type" : "string"
+        },
+        "launchAfter" : {
+          "type" : "string"
+        },
+        "timezone" : {
+          "type" : "string"
+        },
+        "venues" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getEventsFilter##data##venues"
+          }
+        },
+        "defaultLocale" : {
+          "type" : "string"
+        },
+        "languages" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "currency" : {
+          "type" : "string"
+        },
+        "registrationSecurityLevel" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "eventStatus" : {
+          "type" : "string"
+        },
+        "testMode" : {
+          "type" : "boolean"
+        },
+        "capacity" : {
+          "type" : "number"
+        },
+        "planners" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getEventsFilter##data##planners"
+          }
+        },
+        "customFields" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getEventsFilter##data##customFields"
+          }
+        },
+        "category" : {
+          "$ref" : "#/definitions/getEventsFilter##data##category"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "_links" : {
+          "$ref" : "#/definitions/getEventsFilter##data##_links"
+        },
+        "created" : {
+          "type" : "string"
+        },
+        "lastModified" : {
+          "type" : "string"
+        },
+        "createdBy" : {
+          "type" : "string"
+        },
+        "lastModifiedBy" : {
+          "type" : "string"
+        },
+        "phone" : {
+          "type" : "string"
+        },
+        "stakeholders" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getEventsFilter##data##stakeholders"
+          }
+        },
+        "note" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter" : {
+      "properties" : {
+        "paging" : {
+          "$ref" : "#/definitions/getEventsFilter##paging"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getEventsFilter##data"
+          }
+        }
+      }
+    },
+    "getEventsFilter_Request##body" : {
+      "properties" : {
+        "filter" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getEventsFilter_Request" : {
+      "properties" : {
+        "body" : {
+          "$ref" : "#/definitions/getEventsFilter_Request##body"
+        }
+      }
+    }
+  }
+}
