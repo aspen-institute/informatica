@@ -20,29 +20,13 @@
         "operationId" : "getAttendeesFilter",
         "produces" : [ "application/json" ],
         "consumes" : [ "application/json" ],
-        "parameters" : [ 
-		{
+        "parameters" : [ {
           "name" : "expand",
           "in" : "query",
           "description" : null,
           "required" : false,
           "type" : "string"
-        }, 
-		{
-          "name" : "limit",
-          "in" : "query",
-          "description" : null,
-          "required" : false,
-          "type" : "integer"
-        },
-		{
-          "name" : "after",
-          "in" : "query",
-          "description" : null,
-          "required" : false,
-          "type" : "string"
-        },
-		{
+        }, {
           "name" : "token",
           "in" : "query",
           "description" : null,
@@ -178,6 +162,9 @@
         "workAddress" : {
           "$ref" : "#/definitions/getAttendeesFilter##data##contact##workAddress"
         },
+        "homeAddress" : {
+          "$ref" : "#/definitions/getAttendees##data##contact##homeAddress"
+        },
         "optOut" : {
           "$ref" : "#/definitions/getAttendeesFilter##data##contact##optOut"
         },
@@ -229,6 +216,34 @@
       }
     },
     "getAttendeesFilter##data##contact##workAddress" : {
+      "properties" : {
+        "region" : {
+          "type" : "string"
+        },
+        "regionCode" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "address1" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "postalCode" : {
+          "type" : "string"
+        },
+        "address2" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getAttendees##data##contact##homeAddress" : {
       "properties" : {
         "region" : {
           "type" : "string"
@@ -413,7 +428,7 @@
         "guest" : {
           "type" : "boolean"
         },
-		"primaryId": {
+        "primaryId": {
           "type" : "string"
         },
         "group" : {
