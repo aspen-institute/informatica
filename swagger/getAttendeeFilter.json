@@ -32,6 +32,13 @@
           "description" : null,
           "required" : false,
           "type" : "string"
+        }, 
+        {
+          "name" : "after",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
         }, {
           "name" : "body",
           "in" : "body",
