@@ -1,0 +1,952 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "cfg-aspen-institute.pantheonsite.io",
+  "basePath" : "/wp-json/wp/v2",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/event/{id}" : {
+      "put" : {
+        "tags" : [ "putEvent" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "putEvent",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : null,
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/putEvent_Request##body"
+          }
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/putEvent"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "putEvent##guid" : {
+      "properties" : {
+        "rendered" : {
+          "type" : "string"
+        },
+        "raw" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##title" : {
+      "properties" : {
+        "raw" : {
+          "type" : "string"
+        },
+        "rendered" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##content" : {
+      "properties" : {
+        "raw" : {
+          "type" : "string"
+        },
+        "rendered" : {
+          "type" : "string"
+        },
+        "protected" : {
+          "type" : "boolean"
+        },
+        "block_version" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "putEvent##excerpt" : {
+      "properties" : {
+        "raw" : {
+          "type" : "string"
+        },
+        "rendered" : {
+          "type" : "string"
+        },
+        "protected" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "putEvent##meta" : {
+      "properties" : {
+        "immersive" : {
+          "type" : "boolean"
+        },
+        "authentication_status" : {
+          "type" : "string"
+        },
+        "authentication_restrictions" : {
+          "type" : "string"
+        },
+        "history_exclude" : {
+          "type" : "boolean"
+        },
+        "_post_type_term" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "footnotes" : {
+          "type" : "string"
+        },
+        "Salesforce_Id" : {
+          "type" : "string"
+        },
+        "Cvent_External_Id__c" : {
+          "type" : "string"
+        },
+        "Start_Date__c" : {
+          "type" : "string"
+        },
+        "Start_Time__c" : {
+          "type" : "string"
+        },
+        "End_Date__c" : {
+          "type" : "string"
+        },
+        "End_Time__c" : {
+          "type" : "string"
+        },
+        "timezone" : {
+          "type" : "string"
+        },
+        "Status__c" : {
+          "type" : "string"
+        },
+        "Venue__c" : {
+          "type" : "string"
+        },
+        "Venue_Address_1__c" : {
+          "type" : "string"
+        },
+        "Venue_Address_2__c" : {
+          "type" : "string"
+        },
+        "Venue_City__c" : {
+          "type" : "string"
+        },
+        "Venue_State__c" : {
+          "type" : "string"
+        },
+        "Venue_Country__c" : {
+          "type" : "string"
+        },
+        "event_contact" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##event_date_formats" : {
+      "properties" : {
+        "day" : {
+          "type" : "string"
+        },
+        "day_pad" : {
+          "type" : "string"
+        },
+        "day_name" : {
+          "type" : "string"
+        },
+        "day_abbr" : {
+          "type" : "string"
+        },
+        "day_suffix" : {
+          "type" : "string"
+        },
+        "month" : {
+          "type" : "string"
+        },
+        "month_pad" : {
+          "type" : "string"
+        },
+        "month_name" : {
+          "type" : "string"
+        },
+        "month_abbr" : {
+          "type" : "string"
+        },
+        "year" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##yoast_head_json##robots" : {
+      "properties" : {
+        "index" : {
+          "type" : "string"
+        },
+        "follow" : {
+          "type" : "string"
+        },
+        "max-snippet" : {
+          "type" : "string"
+        },
+        "max-image-preview" : {
+          "type" : "string"
+        },
+        "max-video-preview" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##yoast_head_json##schema##@graph##isPartOf" : {
+      "properties" : {
+        "@id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##yoast_head_json##schema##@graph##breadcrumb" : {
+      "properties" : {
+        "@id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##yoast_head_json##schema##@graph##potentialAction" : {
+      "properties" : {
+        "@type" : {
+          "type" : "string"
+        },
+        "target" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "query-input" : {
+          "$ref" : "#/definitions/putEvent##yoast_head_json##schema##@graph##potentialAction##query-input"
+        }
+      }
+    },
+    "putEvent##yoast_head_json##schema##@graph##itemListElement" : {
+      "properties" : {
+        "@type" : {
+          "type" : "string"
+        },
+        "position" : {
+          "type" : "number"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "item" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##yoast_head_json##schema##@graph##potentialAction##target" : {
+      "properties" : {
+        "@type" : {
+          "type" : "string"
+        },
+        "urlTemplate" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##yoast_head_json##schema##@graph##potentialAction##query-input" : {
+      "properties" : {
+        "@type" : {
+          "type" : "string"
+        },
+        "valueRequired" : {
+          "type" : "boolean"
+        },
+        "valueName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##yoast_head_json##schema##@graph" : {
+      "properties" : {
+        "@type" : {
+          "type" : "string"
+        },
+        "@id" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "isPartOf" : {
+          "$ref" : "#/definitions/putEvent##yoast_head_json##schema##@graph##isPartOf"
+        },
+        "datePublished" : {
+          "type" : "string"
+        },
+        "breadcrumb" : {
+          "$ref" : "#/definitions/putEvent##yoast_head_json##schema##@graph##breadcrumb"
+        },
+        "inLanguage" : {
+          "type" : "string"
+        },
+        "potentialAction" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##yoast_head_json##schema##@graph##potentialAction"
+          }
+        },
+        "itemListElement" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##yoast_head_json##schema##@graph##itemListElement"
+          }
+        },
+        "description" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##yoast_head_json##schema" : {
+      "properties" : {
+        "@context" : {
+          "type" : "string"
+        },
+        "@graph" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##yoast_head_json##schema##@graph"
+          }
+        }
+      }
+    },
+    "putEvent##yoast_head_json" : {
+      "properties" : {
+        "title" : {
+          "type" : "string"
+        },
+        "robots" : {
+          "$ref" : "#/definitions/putEvent##yoast_head_json##robots"
+        },
+        "canonical" : {
+          "type" : "string"
+        },
+        "og_locale" : {
+          "type" : "string"
+        },
+        "og_type" : {
+          "type" : "string"
+        },
+        "og_title" : {
+          "type" : "string"
+        },
+        "og_description" : {
+          "type" : "string"
+        },
+        "og_url" : {
+          "type" : "string"
+        },
+        "og_site_name" : {
+          "type" : "string"
+        },
+        "twitter_card" : {
+          "type" : "string"
+        },
+        "schema" : {
+          "$ref" : "#/definitions/putEvent##yoast_head_json##schema"
+        }
+      }
+    },
+    "putEvent##_links##self##targetHints" : {
+      "properties" : {
+        "allow" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "putEvent##_links##self" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        },
+        "targetHints" : {
+          "$ref" : "#/definitions/putEvent##_links##self##targetHints"
+        }
+      }
+    },
+    "putEvent##_links##collection" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##about" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##author" : {
+      "properties" : {
+        "embeddable" : {
+          "type" : "boolean"
+        },
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##version-history" : {
+      "properties" : {
+        "count" : {
+          "type" : "number"
+        },
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:attachment" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:term" : {
+      "properties" : {
+        "taxonomy" : {
+          "type" : "string"
+        },
+        "embeddable" : {
+          "type" : "boolean"
+        },
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-publish" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-unfiltered-html" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-assign-author" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-create-tags" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-assign-tags" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-create-program_tax" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-assign-program_tax" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-create-impact_area_tax" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-assign-impact_area_tax" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-create-series_tax" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-assign-series_tax" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-create-topic_tax" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-assign-topic_tax" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-create-people_tax" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-assign-people_tax" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-create-event_type" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-assign-event_type" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##curies" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "href" : {
+          "type" : "string"
+        },
+        "templated" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "putEvent##_links" : {
+      "properties" : {
+        "self" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##self"
+          }
+        },
+        "collection" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##collection"
+          }
+        },
+        "about" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##about"
+          }
+        },
+        "author" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##author"
+          }
+        },
+        "version-history" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##version-history"
+          }
+        },
+        "wp:attachment" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:attachment"
+          }
+        },
+        "wp:term" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:term"
+          }
+        },
+        "wp:action-publish" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-publish"
+          }
+        },
+        "wp:action-unfiltered-html" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-unfiltered-html"
+          }
+        },
+        "wp:action-assign-author" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-assign-author"
+          }
+        },
+        "wp:action-create-tags" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-create-tags"
+          }
+        },
+        "wp:action-assign-tags" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-assign-tags"
+          }
+        },
+        "wp:action-create-program_tax" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-create-program_tax"
+          }
+        },
+        "wp:action-assign-program_tax" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-assign-program_tax"
+          }
+        },
+        "wp:action-create-impact_area_tax" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-create-impact_area_tax"
+          }
+        },
+        "wp:action-assign-impact_area_tax" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-assign-impact_area_tax"
+          }
+        },
+        "wp:action-create-series_tax" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-create-series_tax"
+          }
+        },
+        "wp:action-assign-series_tax" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-assign-series_tax"
+          }
+        },
+        "wp:action-create-topic_tax" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-create-topic_tax"
+          }
+        },
+        "wp:action-assign-topic_tax" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-assign-topic_tax"
+          }
+        },
+        "wp:action-create-people_tax" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-create-people_tax"
+          }
+        },
+        "wp:action-assign-people_tax" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-assign-people_tax"
+          }
+        },
+        "wp:action-create-event_type" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-create-event_type"
+          }
+        },
+        "wp:action-assign-event_type" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-assign-event_type"
+          }
+        },
+        "curies" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##curies"
+          }
+        }
+      }
+    },
+    "putEvent" : {
+      "properties" : {
+        "id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "date" : {
+          "type" : "string"
+        },
+        "date_gmt" : {
+          "type" : "string"
+        },
+        "guid" : {
+          "$ref" : "#/definitions/putEvent##guid"
+        },
+        "modified" : {
+          "type" : "string"
+        },
+        "modified_gmt" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        },
+        "slug" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "link" : {
+          "type" : "string"
+        },
+        "title" : {
+          "$ref" : "#/definitions/putEvent##title"
+        },
+        "content" : {
+          "$ref" : "#/definitions/putEvent##content"
+        },
+        "excerpt" : {
+          "$ref" : "#/definitions/putEvent##excerpt"
+        },
+        "author" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "featured_media" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "parent" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "menu_order" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "template" : {
+          "type" : "string"
+        },
+        "meta" : {
+          "$ref" : "#/definitions/putEvent##meta"
+        },
+        "tags" : {
+          "type" : "string"
+        },
+        "program_tax" : {
+          "type" : "string"
+        },
+        "impact_area_tax" : {
+          "type" : "string"
+        },
+        "series_tax" : {
+          "type" : "string"
+        },
+        "topic_tax" : {
+          "type" : "string"
+        },
+        "people_tax" : {
+          "type" : "string"
+        },
+        "event_type" : {
+          "type" : "string"
+        },
+        "permalink_template" : {
+          "type" : "string"
+        },
+        "generated_slug" : {
+          "type" : "string"
+        },
+        "class_list" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "event_date_range" : {
+          "type" : "string"
+        },
+        "event_date_formats" : {
+          "$ref" : "#/definitions/putEvent##event_date_formats"
+        },
+        "yoast_head" : {
+          "type" : "string"
+        },
+        "yoast_head_json" : {
+          "$ref" : "#/definitions/putEvent##yoast_head_json"
+        },
+        "_links" : {
+          "$ref" : "#/definitions/putEvent##_links"
+        }
+      }
+    },
+    "putEvent_Request##body##meta" : {
+      "properties" : {
+        "immersive" : {
+          "type" : "boolean"
+        },
+        "authentication_status" : {
+          "type" : "string"
+        },
+        "authentication_restrictions" : {
+          "type" : "string"
+        },
+        "history_exclude" : {
+          "type" : "boolean"
+        },
+        "_post_type_term" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "footnotes" : {
+          "type" : "string"
+        },
+        "Salesforce_Id" : {
+          "type" : "string"
+        },
+        "Cvent_External_Id__c" : {
+          "type" : "string"
+        },
+        "Start_Date__c" : {
+          "type" : "string"
+        },
+        "Start_Time__c" : {
+          "type" : "string"
+        },
+        "End_Date__c" : {
+          "type" : "string"
+        },
+        "End_Time__c" : {
+          "type" : "string"
+        },
+        "timezone" : {
+          "type" : "string"
+        },
+        "Status__c" : {
+          "type" : "string"
+        },
+        "Venue__c" : {
+          "type" : "string"
+        },
+        "Venue_Address_1__c" : {
+          "type" : "string"
+        },
+        "Venue_Address_2__c" : {
+          "type" : "string"
+        },
+        "Venue_City__c" : {
+          "type" : "string"
+        },
+        "Venue_State__c" : {
+          "type" : "string"
+        },
+        "Venue_Country__c" : {
+          "type" : "string"
+        },
+        "event_contact" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent_Request##body" : {
+      "properties" : {
+        "title" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        },
+        "excerpt" : {
+          "type" : "string"
+        },
+        "meta" : {
+          "$ref" : "#/definitions/putEvent_Request##body##meta"
+        }
+      }
+    },
+    "putEvent_Request" : {
+      "properties" : {
+        "body" : {
+          "$ref" : "#/definitions/putEvent_Request##body"
+        }
+      }
+    }
+  }
+}
