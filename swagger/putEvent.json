@@ -9,10 +9,10 @@
     "license" : null
   },
   "host" : "cfg-aspen-institute.pantheonsite.io",
-  "basePath" : "/wp-json/wp/v2",
+  "basePath" : "/wp-json/aspen-institute/v1",
   "schemes" : [ "https" ],
   "paths" : {
-    "/event/{id}" : {
+    "/events/{id}" : {
       "put" : {
         "tags" : [ "putEvent" ],
         "summary" : null,
