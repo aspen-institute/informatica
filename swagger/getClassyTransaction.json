@@ -1,0 +1,1522 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "api.classy.org",
+  "basePath" : "//2.0",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/transactions/{transaction_id}" : {
+      "get" : {
+        "tags" : [ "getClassyTransaction" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "getClassyTransaction",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "transaction_id",
+          "in" : "path",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/getClassyTransaction"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "getClassyTransaction##metadata##_classy_pay##latestTransactionHistory##stateDetails" : {
+      "properties" : {
+        "processorTxStatus" : {
+          "type" : "string"
+        },
+        "applicationId" : {
+          "type" : "string"
+        },
+        "balanceTransactionId" : {
+          "type" : "string"
+        },
+        "customerId" : {
+          "type" : "string"
+        },
+        "transferId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##latestTransactionHistory##createdBy##webhook" : {
+      "properties" : {
+        "type" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##latestTransactionHistory##createdBy" : {
+      "properties" : {
+        "webhook" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##latestTransactionHistory##createdBy##webhook"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##latestTransactionHistory" : {
+      "properties" : {
+        "stateDetails" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##latestTransactionHistory##stateDetails"
+        },
+        "createdBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##latestTransactionHistory##createdBy"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "appId" : {
+          "type" : "string"
+        },
+        "transactionId" : {
+          "type" : "string"
+        },
+        "processorResultId" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees##percent##createdBy##internal" : {
+      "properties" : {
+        "type" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees##percent##createdBy" : {
+      "properties" : {
+        "internal" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees##percent##createdBy##internal"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees##percent##lastModifiedBy##internal" : {
+      "properties" : {
+        "type" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees##percent##lastModifiedBy" : {
+      "properties" : {
+        "internal" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees##percent##lastModifiedBy##internal"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees##percent" : {
+      "properties" : {
+        "createdBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees##percent##createdBy"
+        },
+        "lastModifiedBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees##percent##lastModifiedBy"
+        },
+        "createdDate" : {
+          "type" : "string"
+        },
+        "lastModifiedDate" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "calcMethod" : {
+          "type" : "string"
+        },
+        "fee" : {
+          "type" : "number"
+        },
+        "iteration" : {
+          "type" : "string"
+        },
+        "paymentMethod" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees" : {
+      "properties" : {
+        "percent" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees##percent"
+          }
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##processorFees##percent" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "fee" : {
+          "type" : "number"
+        },
+        "parent" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##processorFees##fixed" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "fee" : {
+          "type" : "number"
+        },
+        "parent" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##processorFees" : {
+      "properties" : {
+        "percent" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##processorFees##percent"
+          }
+        },
+        "fixed" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##processorFees##fixed"
+          }
+        },
+        "cap" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule" : {
+      "properties" : {
+        "applicationFees" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##applicationFees"
+        },
+        "processorFees" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule##processorFees"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##applied##application" : {
+      "properties" : {
+        "amount" : {
+          "type" : "number"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##applied##processor" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "amount" : {
+          "type" : "number"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##applied##cap" : {
+      "properties" : {
+        "applicationFeeCap" : {
+          "type" : "string"
+        },
+        "processorFeeCap" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##applied" : {
+      "properties" : {
+        "application" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##applied##application"
+          }
+        },
+        "processor" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##applied##processor"
+          }
+        },
+        "cap" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##applied##cap"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##chargeFees" : {
+      "properties" : {
+        "payer" : {
+          "type" : "string"
+        },
+        "schedule" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##schedule"
+        },
+        "applied" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees##applied"
+        },
+        "applicationFee" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "processorFee" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "feeSum" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "donationLessFees" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##createdBy##pay##applicationAccess" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##createdBy##pay" : {
+      "properties" : {
+        "applicationAccess" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##createdBy##pay##applicationAccess"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##createdBy##donor" : {
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction##createdBy" : {
+      "properties" : {
+        "pay" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##createdBy##pay"
+        },
+        "donor" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##createdBy##donor"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transaction" : {
+      "properties" : {
+        "chargeFees" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##chargeFees"
+        },
+        "createdBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction##createdBy"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "appId" : {
+          "type" : "string"
+        },
+        "processorId" : {
+          "type" : "string"
+        },
+        "processorObjectId" : {
+          "type" : "string"
+        },
+        "processorResultId" : {
+          "type" : "string"
+        },
+        "payerId" : {
+          "type" : "string"
+        },
+        "paymentTokenId" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "descriptor" : {
+          "type" : "string"
+        },
+        "currency" : {
+          "type" : "string"
+        },
+        "amount" : {
+          "type" : "string"
+        },
+        "chargeCurrency" : {
+          "type" : "string"
+        },
+        "chargeAmount" : {
+          "type" : "string"
+        },
+        "chargeTotal" : {
+          "type" : "string"
+        },
+        "clientIp" : {
+          "type" : "string"
+        },
+        "userAgent" : {
+          "type" : "string"
+        },
+        "statementDescriptor" : {
+          "type" : "string"
+        },
+        "referenceId" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string"
+        },
+        "metaData" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transactionHistory##stateDetails" : {
+      "properties" : {
+        "processorTxStatus" : {
+          "type" : "string"
+        },
+        "applicationId" : {
+          "type" : "string"
+        },
+        "balanceTransactionId" : {
+          "type" : "string"
+        },
+        "customerId" : {
+          "type" : "string"
+        },
+        "transferId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transactionHistory##createdBy##webhook" : {
+      "properties" : {
+        "type" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transactionHistory##createdBy" : {
+      "properties" : {
+        "pay" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transactionHistory##createdBy##pay"
+        },
+        "donor" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transactionHistory##createdBy##donor"
+        },
+        "webhook" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transactionHistory##createdBy##webhook"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transactionHistory##createdBy##pay##applicationAccess" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transactionHistory##createdBy##pay" : {
+      "properties" : {
+        "applicationAccess" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transactionHistory##createdBy##pay##applicationAccess"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transactionHistory##createdBy##donor" : {
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##transactionHistory" : {
+      "properties" : {
+        "stateDetails" : {
+          "type" : "string"
+        },
+        "createdBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transactionHistory##createdBy"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "appId" : {
+          "type" : "string"
+        },
+        "transactionId" : {
+          "type" : "string"
+        },
+        "processorResultId" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##payer##createdBy##pay##applicationAccess" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##payer##createdBy##pay" : {
+      "properties" : {
+        "applicationAccess" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##payer##createdBy##pay##applicationAccess"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##payer##createdBy##donor" : {
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##payer##createdBy" : {
+      "properties" : {
+        "pay" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##payer##createdBy##pay"
+        },
+        "donor" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##payer##createdBy##donor"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##payer" : {
+      "properties" : {
+        "createdBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##payer##createdBy"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "appId" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "address1" : {
+          "type" : "string"
+        },
+        "address2" : {
+          "type" : "string"
+        },
+        "address3" : {
+          "type" : "string"
+        },
+        "address4" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "zip" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string"
+        },
+        "metaData" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentToken##createdBy##pay##applicationAccess" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentToken##createdBy##pay" : {
+      "properties" : {
+        "applicationAccess" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentToken##createdBy##pay##applicationAccess"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentToken##createdBy##donor" : {
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentToken##createdBy" : {
+      "properties" : {
+        "pay" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentToken##createdBy##pay"
+        },
+        "donor" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentToken##createdBy##donor"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentToken##lastModifiedBy##pay##applicationAccess" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentToken##lastModifiedBy##pay" : {
+      "properties" : {
+        "applicationAccess" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentToken##lastModifiedBy##pay##applicationAccess"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentToken##lastModifiedBy##donor" : {
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentToken##lastModifiedBy" : {
+      "properties" : {
+        "pay" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentToken##lastModifiedBy##pay"
+        },
+        "donor" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentToken##lastModifiedBy##donor"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentToken##details" : {
+      "properties" : {
+        "source" : {
+          "type" : "string"
+        },
+        "expirationMonth" : {
+          "type" : "string"
+        },
+        "expirationYear" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentToken" : {
+      "properties" : {
+        "createdBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentToken##createdBy"
+        },
+        "lastModifiedBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentToken##lastModifiedBy"
+        },
+        "details" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentToken##details"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "appId" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "payerId" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string"
+        },
+        "lastModifiedDate" : {
+          "type" : "string"
+        },
+        "fraudDetails" : {
+          "type" : "string"
+        },
+        "source" : {
+          "type" : "string"
+        },
+        "metaData" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentTokenHistory##createdBy##pay##applicationAccess" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentTokenHistory##createdBy##pay" : {
+      "properties" : {
+        "applicationAccess" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentTokenHistory##createdBy##pay##applicationAccess"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentTokenHistory##createdBy##donor" : {
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentTokenHistory##createdBy" : {
+      "properties" : {
+        "pay" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentTokenHistory##createdBy##pay"
+        },
+        "donor" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentTokenHistory##createdBy##donor"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##paymentTokenHistory" : {
+      "properties" : {
+        "stateDetails" : {
+          "type" : "string"
+        },
+        "createdBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentTokenHistory##createdBy"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "appId" : {
+          "type" : "string"
+        },
+        "paymentTokenId" : {
+          "type" : "string"
+        },
+        "processorResultId" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##application##createdBy##pay##applicationAccess" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##application##createdBy##pay" : {
+      "properties" : {
+        "applicationAccess" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##application##createdBy##pay##applicationAccess"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##application##createdBy##classy##member" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##application##createdBy##classy" : {
+      "properties" : {
+        "member" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##application##createdBy##classy##member"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##application##createdBy" : {
+      "properties" : {
+        "pay" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##application##createdBy##pay"
+        },
+        "classy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##application##createdBy##classy"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##application##lastModifiedBy##pay##applicationAccess" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##application##lastModifiedBy##pay" : {
+      "properties" : {
+        "applicationAccess" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##application##lastModifiedBy##pay##applicationAccess"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##application##lastModifiedBy##classy##member" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##application##lastModifiedBy##classy" : {
+      "properties" : {
+        "member" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##application##lastModifiedBy##classy##member"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##application##lastModifiedBy" : {
+      "properties" : {
+        "pay" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##application##lastModifiedBy##pay"
+        },
+        "classy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##application##lastModifiedBy##classy"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##application" : {
+      "properties" : {
+        "createdBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##application##createdBy"
+        },
+        "lastModifiedBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##application##lastModifiedBy"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "currency" : {
+          "type" : "string"
+        },
+        "owner" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "classyOrganizationId" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string"
+        },
+        "lastModifiedDate" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##processorFees##fixed" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "fee" : {
+          "type" : "number"
+        },
+        "parent" : {
+          "type" : "string"
+        },
+        "iteration" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##processorFees##percent" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "fee" : {
+          "type" : "number"
+        },
+        "parent" : {
+          "type" : "string"
+        },
+        "iteration" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##processorFees" : {
+      "properties" : {
+        "fixed" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##processorFees##fixed"
+          }
+        },
+        "percent" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##processorFees##percent"
+          }
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##createdBy##pay##applicationAccess" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##createdBy##pay" : {
+      "properties" : {
+        "applicationAccess" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##createdBy##pay##applicationAccess"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##createdBy##classy##member" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##createdBy##classy" : {
+      "properties" : {
+        "member" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##createdBy##classy##member"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##createdBy" : {
+      "properties" : {
+        "pay" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##createdBy##pay"
+        },
+        "classy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##createdBy##classy"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##lastModifiedBy##pay##applicationAccess" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##lastModifiedBy##pay" : {
+      "properties" : {
+        "applicationAccess" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##lastModifiedBy##pay##applicationAccess"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##lastModifiedBy##classy##member" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##lastModifiedBy##classy" : {
+      "properties" : {
+        "member" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##lastModifiedBy##classy##member"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor##lastModifiedBy" : {
+      "properties" : {
+        "pay" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##lastModifiedBy##pay"
+        },
+        "classy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##lastModifiedBy##classy"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay##processor" : {
+      "properties" : {
+        "paymentTypes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "processorFees" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##processorFees"
+        },
+        "createdBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##createdBy"
+        },
+        "lastModifiedBy" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor##lastModifiedBy"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "appId" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "currencies" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string"
+        },
+        "lastModifiedDate" : {
+          "type" : "string"
+        },
+        "adminEmail" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction##metadata##_classy_pay" : {
+      "properties" : {
+        "appId" : {
+          "type" : "string"
+        },
+        "latestTransactionHistory" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##latestTransactionHistory"
+        },
+        "transaction" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transaction"
+        },
+        "transactionHistory" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##transactionHistory"
+          }
+        },
+        "payer" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##payer"
+        },
+        "paymentToken" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentToken"
+        },
+        "paymentTokenHistory" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##paymentTokenHistory"
+          }
+        },
+        "application" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##application"
+        },
+        "processor" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay##processor"
+        }
+      }
+    },
+    "getClassyTransaction##metadata" : {
+      "properties" : {
+        "_classy_pay" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata##_classy_pay"
+        }
+      }
+    },
+    "getClassyTransaction##context" : {
+      "properties" : {
+        "is_passport" : {
+          "type" : "boolean"
+        },
+        "source_campaign_id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "source_campaign_type" : {
+          "type" : "string"
+        },
+        "application_fee_campaign_category" : {
+          "type" : "string"
+        },
+        "application_fee_platform_fee_type" : {
+          "type" : "string"
+        },
+        "platform_tip" : {
+          "type" : "string"
+        },
+        "commerce_order_id" : {
+          "type" : "string"
+        },
+        "commerce_confirmation_id" : {
+          "type" : "string"
+        },
+        "vendor_name" : {
+          "type" : "string"
+        },
+        "vendor_batch_number" : {
+          "type" : "string"
+        },
+        "vendor_batch_sequence" : {
+          "type" : "string"
+        },
+        "created_by" : {
+          "type" : "string"
+        }
+      }
+    },
+    "getClassyTransaction" : {
+      "properties" : {
+        "billing_city" : {
+          "type" : "string"
+        },
+        "billing_state" : {
+          "type" : "string"
+        },
+        "billing_country" : {
+          "type" : "string"
+        },
+        "payment_method" : {
+          "type" : "string"
+        },
+        "company_name" : {
+          "type" : "string"
+        },
+        "in_honor_of" : {
+          "type" : "string"
+        },
+        "fundraising_team_id" : {
+          "type" : "string"
+        },
+        "is_anonymous" : {
+          "type" : "boolean"
+        },
+        "payment_gateway" : {
+          "type" : "string"
+        },
+        "browser_info" : {
+          "type" : "string"
+        },
+        "acknowledgements_count" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "fee_on_top" : {
+          "type" : "boolean"
+        },
+        "account_type" : {
+          "type" : "string"
+        },
+        "institution" : {
+          "type" : "string"
+        },
+        "account_number" : {
+          "type" : "string"
+        },
+        "raw_currency_code" : {
+          "type" : "string"
+        },
+        "charged_currency_code" : {
+          "type" : "string"
+        },
+        "charged_total_gross_amount" : {
+          "type" : "string"
+        },
+        "charged_classy_fees_amount" : {
+          "type" : "string"
+        },
+        "charged_pp_fees_amount" : {
+          "type" : "string"
+        },
+        "tax_entity_id" : {
+          "type" : "string"
+        },
+        "charged_at" : {
+          "type" : "string"
+        },
+        "is_gift_aid" : {
+          "type" : "boolean"
+        },
+        "applied_fot_percent" : {
+          "type" : "string"
+        },
+        "payment_source" : {
+          "type" : "string"
+        },
+        "hide_amount" : {
+          "type" : "boolean"
+        },
+        "processor_decline_code" : {
+          "type" : "string"
+        },
+        "is_reprocess" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "member_id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "member_name" : {
+          "type" : "string"
+        },
+        "member_country" : {
+          "type" : "string"
+        },
+        "member_phone" : {
+          "type" : "string"
+        },
+        "member_email_address" : {
+          "type" : "string"
+        },
+        "billing_first_name" : {
+          "type" : "string"
+        },
+        "billing_last_name" : {
+          "type" : "string"
+        },
+        "billing_address1" : {
+          "type" : "string"
+        },
+        "billing_address2" : {
+          "type" : "string"
+        },
+        "billing_postal_code" : {
+          "type" : "string"
+        },
+        "card_type" : {
+          "type" : "string"
+        },
+        "updated_at" : {
+          "type" : "string"
+        },
+        "purchased_at" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "refunded_at" : {
+          "type" : "string"
+        },
+        "pp_reference_id" : {
+          "type" : "string"
+        },
+        "pp_transaction_id" : {
+          "type" : "string"
+        },
+        "pp_response" : {
+          "type" : "string"
+        },
+        "pp_fees_amount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "payment_type" : {
+          "type" : "string"
+        },
+        "total_gross_amount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "donation_net_amount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "donation_gross_amount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "overhead_net_amount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "fees_amount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "classy_fees_amount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "organization_id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "designation_id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "campaign_id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "fundraising_page_id" : {
+          "type" : "string"
+        },
+        "recurring_donation_plan_id" : {
+          "type" : "string"
+        },
+        "comment" : {
+          "type" : "string"
+        },
+        "parent_transaction_id" : {
+          "type" : "string"
+        },
+        "created_at" : {
+          "type" : "string"
+        },
+        "donation_matching_plan_id" : {
+          "type" : "string"
+        },
+        "card_last_four" : {
+          "type" : "string"
+        },
+        "card_expiration" : {
+          "type" : "string"
+        },
+        "adjustment_amount" : {
+          "type" : "string"
+        },
+        "promo_code_code" : {
+          "type" : "string"
+        },
+        "applied_application_fee_percent" : {
+          "type" : "string"
+        },
+        "applied_processor_fee_percent" : {
+          "type" : "string"
+        },
+        "applied_raw_processor_fee_flat" : {
+          "type" : "string"
+        },
+        "applied_flex_rate_percent" : {
+          "type" : "string"
+        },
+        "charged_fees_amount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "currency_code" : {
+          "type" : "string"
+        },
+        "frequency" : {
+          "type" : "string"
+        },
+        "is_donor_covered_fee" : {
+          "type" : "boolean"
+        },
+        "metadata" : {
+          "$ref" : "#/definitions/getClassyTransaction##metadata"
+        },
+        "raw_donation_gross_amount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "raw_initial_gross_amount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "initial_gross_amount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "raw_adjustment_amount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "raw_overhead_net_amount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "raw_total_gross_amount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "raw_flex_rate_amount" : {
+          "type" : "string"
+        },
+        "flex_rate_amount" : {
+          "type" : "string"
+        },
+        "raw_application_fee_amount" : {
+          "type" : "string"
+        },
+        "application_fee_amount" : {
+          "type" : "string"
+        },
+        "raw_processor_fee_amount" : {
+          "type" : "string"
+        },
+        "processor_fee_amount" : {
+          "type" : "string"
+        },
+        "reprocess_attempts" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "supporter_id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "opted_into_payment_sync" : {
+          "type" : "boolean"
+        },
+        "context" : {
+          "$ref" : "#/definitions/getClassyTransaction##context"
+        }
+      }
+    }
+  }
+}
