@@ -118,9 +118,6 @@
         "footnotes" : {
           "type" : "string"
         },
-        "Salesforce_Id" : {
-          "type" : "string"
-        },
         "Cvent_External_Id__c" : {
           "type" : "string"
         },
@@ -160,7 +157,34 @@
         "Venue_Country__c" : {
           "type" : "string"
         },
-        "event_contact" : {
+        "event_contact_email" : {
+          "type" : "string"
+        },
+        "event_contact_phone" : {
+          "type" : "string"
+        },
+        "event_register_href" : {
+          "type" : "string"
+        },
+        "event_register_text" : {
+          "type" : "string"
+        },
+        "event_watch_href" : {
+          "type" : "string"
+        },
+        "event_watch_text" : {
+          "type" : "string"
+        },
+        "event_add_to_calendar" : {
+          "type" : "boolean"
+        },
+        "event_add_to_calendar_text" : {
+          "type" : "string"
+        },
+        "event_actions_post" : {
+          "type" : "string"
+        },
+        "event_label" : {
           "type" : "string"
         }
       }
@@ -218,7 +242,37 @@
         }
       }
     },
+    "putEvent##yoast_head_json##og_image" : {
+      "properties" : {
+        "width" : {
+          "type" : "number"
+        },
+        "height" : {
+          "type" : "number"
+        },
+        "url" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      }
+    },
     "putEvent##yoast_head_json##schema##@graph##isPartOf" : {
+      "properties" : {
+        "@id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##yoast_head_json##schema##@graph##primaryImageOfPage" : {
+      "properties" : {
+        "@id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##yoast_head_json##schema##@graph##image" : {
       "properties" : {
         "@id" : {
           "type" : "string"
@@ -304,7 +358,19 @@
         "isPartOf" : {
           "$ref" : "#/definitions/putEvent##yoast_head_json##schema##@graph##isPartOf"
         },
+        "primaryImageOfPage" : {
+          "$ref" : "#/definitions/putEvent##yoast_head_json##schema##@graph##primaryImageOfPage"
+        },
+        "image" : {
+          "$ref" : "#/definitions/putEvent##yoast_head_json##schema##@graph##image"
+        },
+        "thumbnailUrl" : {
+          "type" : "string"
+        },
         "datePublished" : {
+          "type" : "string"
+        },
+        "dateModified" : {
           "type" : "string"
         },
         "breadcrumb" : {
@@ -318,6 +384,15 @@
           "items" : {
             "$ref" : "#/definitions/putEvent##yoast_head_json##schema##@graph##potentialAction"
           }
+        },
+        "contentUrl" : {
+          "type" : "string"
+        },
+        "width" : {
+          "type" : "number"
+        },
+        "height" : {
+          "type" : "number"
         },
         "itemListElement" : {
           "type" : "array",
@@ -371,6 +446,15 @@
         },
         "og_site_name" : {
           "type" : "string"
+        },
+        "article_modified_time" : {
+          "type" : "string"
+        },
+        "og_image" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##yoast_head_json##og_image"
+          }
         },
         "twitter_card" : {
           "type" : "string"
@@ -428,6 +512,26 @@
       "properties" : {
         "count" : {
           "type" : "number"
+        },
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##predecessor-version" : {
+      "properties" : {
+        "id" : {
+          "type" : "number"
+        },
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:featuredmedia" : {
+      "properties" : {
+        "embeddable" : {
+          "type" : "boolean"
         },
         "href" : {
           "type" : "string"
@@ -573,6 +677,20 @@
         }
       }
     },
+    "putEvent##_links##wp:action-create-location" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "putEvent##_links##wp:action-assign-location" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
     "putEvent##_links##curies" : {
       "properties" : {
         "name" : {
@@ -616,6 +734,18 @@
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/putEvent##_links##version-history"
+          }
+        },
+        "predecessor-version" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##predecessor-version"
+          }
+        },
+        "wp:featuredmedia" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:featuredmedia"
           }
         },
         "wp:attachment" : {
@@ -732,6 +862,18 @@
             "$ref" : "#/definitions/putEvent##_links##wp:action-assign-event_type"
           }
         },
+        "wp:action-create-location" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-create-location"
+          }
+        },
+        "wp:action-assign-location" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/putEvent##_links##wp:action-assign-location"
+          }
+        },
         "curies" : {
           "type" : "array",
           "items" : {
@@ -808,25 +950,56 @@
           "$ref" : "#/definitions/putEvent##meta"
         },
         "tags" : {
-          "type" : "string"
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
         },
         "program_tax" : {
-          "type" : "string"
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
         },
         "impact_area_tax" : {
-          "type" : "string"
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
         },
         "series_tax" : {
-          "type" : "string"
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
         },
         "topic_tax" : {
-          "type" : "string"
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
         },
         "people_tax" : {
           "type" : "string"
         },
         "event_type" : {
-          "type" : "string"
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
+        },
+        "location" : {
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
         },
         "permalink_template" : {
           "type" : "string"
@@ -845,6 +1018,9 @@
         },
         "event_date_formats" : {
           "$ref" : "#/definitions/putEvent##event_date_formats"
+        },
+        "salesforce_id" : {
+          "type" : "string"
         },
         "yoast_head" : {
           "type" : "string"
@@ -876,9 +1052,6 @@
           "format" : "int32"
         },
         "footnotes" : {
-          "type" : "string"
-        },
-        "Salesforce_Id" : {
           "type" : "string"
         },
         "Cvent_External_Id__c" : {
@@ -920,13 +1093,49 @@
         "Venue_Country__c" : {
           "type" : "string"
         },
-        "event_contact" : {
+        "event_contact_email" : {
+          "type" : "string"
+        },
+        "event_contact_phone" : {
+          "type" : "string"
+        },
+        "event_register_href" : {
+          "type" : "string"
+        },
+        "event_register_text" : {
+          "type" : "string"
+        },
+        "event_watch_href" : {
+          "type" : "string"
+        },
+        "event_watch_text" : {
+          "type" : "string"
+        },
+        "event_add_to_calendar" : {
+          "type" : "boolean"
+        },
+        "event_add_to_calendar_text" : {
+          "type" : "string"
+        },
+        "event_actions_post" : {
+          "type" : "string"
+        },
+        "event_label" : {
           "type" : "string"
         }
       }
     },
     "putEvent_Request##body" : {
       "properties" : {
+        "slug" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
         "title" : {
           "type" : "string"
         },
@@ -936,8 +1145,82 @@
         "excerpt" : {
           "type" : "string"
         },
+        "author" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "featured_media" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "parent" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "menu_order" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "template" : {
+          "type" : "string"
+        },
         "meta" : {
           "$ref" : "#/definitions/putEvent_Request##body##meta"
+        },
+        "tags" : {
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
+        },
+        "program_tax" : {
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
+        },
+        "impact_area_tax" : {
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
+        },
+        "series_tax" : {
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
+        },
+        "topic_tax" : {
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
+        },
+        "people_tax" : {
+          "type" : "string"
+        },
+        "event_type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
+        },
+        "location" : {
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "int32"
+          }
+        },
+        "salesforce_id" : {
+          "type" : "string"
         }
       }
     },
