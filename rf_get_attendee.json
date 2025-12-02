@@ -1,0 +1,234 @@
+{
+  "swagger" : "2.0",
+
+  "info" : {
+    "description" : "API documentation based off RainFocus API",
+    "version" : "2.0.0",
+    "title" : "RainFocus Create Attendee"
+  },  
+  "host": "events.rainfocus.com",
+  "basePath" : "/api/aspeninstitute/v2",
+  "schemes": [ "https" ],
+  "securityDefinitions" : {
+    "ApiProfileAuth" : {
+      "name" : "apiProfile",
+      "type" : "apiKey",
+      "in" : "header",
+      "description" : "Authorization token"
+    }
+  },
+  "security" : [ {
+    "ApiProfileAuth" : [ ]
+  } ],
+  "paths" : {
+    "/entityDataDump/attendee" : {
+      "get" : {
+        "summary" : "Attendee Entity Data Dump",
+        "description" : "Paged dump of all attendees for an event. Data fields are configurable.\nThe results of this api are cached for 1 minute.",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "attendeeId",
+          "in" : "query",
+          "description" : "Attendee's Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "externalId",
+          "in" : "query",
+          "description" : "Attendee's External Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "registrationId",
+          "in" : "query",
+          "description" : "Attendee's Registration Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "registered",
+          "in" : "query",
+          "description" : "Attendee's true/false registered state. (supports true/false OR 1/0)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "clientId",
+          "in" : "query",
+          "description" : "Attendee's Client Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "query",
+          "description" : "Attendee's email",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "badgeId",
+          "in" : "query",
+          "description" : "Attendee's Badge Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "Set the number of results per page of results (default = 1000)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "cursor",
+          "in" : "query",
+          "description" : "The cursor acts as a type of bookmark for the results list",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "attributeValueName",
+          "in" : "query",
+          "description" : "Filter the results and only include those with an attribute value with this name",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "attributeValueCode",
+          "in" : "query",
+          "description" : "Filter the results and only include those with an attribute value with this code",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "attended",
+          "in" : "query",
+          "description" : "Attendee's true/false attended state. (supports true/false OR 1/0)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "checkedIn",
+          "in" : "query",
+          "description" : "Attendee's true/false checked in state. (supports true/false OR 1/0)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "since",
+          "in" : "query",
+          "description" : "Filters results that are modified since a given timestamp, uses millisecond Unix timestamp (ex. 1749243600000 for June 6th, 2025 at 3:00 PM)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "before",
+          "in" : "query",
+          "description" : "Filters results that are modified before a given timestamp, uses millisecond Unix timestamp (ex. 1749243600000 for June 6th, 2025 at 3:00 PM)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "publishedFiles",
+          "in" : "query",
+          "description" : "Allows you to filter down files based on published status, or not.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "testAccount",
+          "in" : "query",
+          "description" : "Filter based on test account field. (supports true/false OR 1/0)",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "404" : {
+            "description" : "No attendees found with the given parameters"
+          },
+          "403" : {
+            "description" : "Access denied, wrong/invalid org"
+          },
+          "422" : {
+            "description" : "Missing required field"
+          },
+          "500" : {
+            "description" : "Unknown error"
+          },
+          "401" : {
+            "description" : "Invalid api profile ID"
+          },
+          "200" : {
+            "description" : "Success",
+            "examples" : {
+              "application/json" : {
+                "responseCode" : "0",
+                "responseMessage" : "Success",
+                "totalSearchItems" : 1,
+                "timestamp" : "0",
+                "data" : [ {
+                  "attendeeId" : "attendeeId",
+                  "externalId" : "externalId",
+                  "registrationId" : "registrationId",
+                  "badgeId" : "badgeId",
+                  "firstname" : "firstname",
+                  "lastname" : "lastname",
+                  "email" : "example@rainfocus.com",
+                  "jobtitle" : "jobtitle",
+                  "companyname" : "companyname",
+                  "phone" : "phone",
+                  "address1" : "address1",
+                  "address2" : "address2",
+                  "city" : "city",
+                  "stateId" : "stateId",
+                  "state" : "name",
+                  "foreignstate" : "foreignstate",
+                  "zip" : "zip",
+                  "countryId" : "countryId",
+                  "country" : "name",
+                  "registered" : true,
+                  "registeredTime" : "16:00:00",
+                  "registeredDateTime" : "16:00:00",
+                  "registeredDateTimeUtc" : "16:00:00Z",
+                  "checkinTime" : "16:00:00",
+                  "language" : "language",
+                  "createDate" : "16:00:00Z",
+                  "modifiedDate" : "16:00:00Z",
+                  "files" : [ {
+                    "fileName" : "Display Name",
+                    "fileURL" : "filePath",
+                    "fileTypeName" : "name",
+                    "fileTypeCode" : "code",
+                    "published" : false
+                  } ],
+                  "viewAccess" : [ "scheduleaccessId" ],
+                  "viewFilesAccess" : [ "scheduleaccessId" ],
+                  "scheduleAccess" : [ "scheduleaccessId" ],
+                  "attendAccess" : [ "scheduleaccessId" ],
+                  "inPersonAttendee" : true,
+                  "virtualAttendee" : true,
+                  "schedulerAccess" : true,
+                  "calendarReadOnlyAccess" : false,
+                  "meetingAccess" : "0",
+                  "attributeValues" : [ {
+                    "attribute" : "displayname",
+                    "attribute_id" : "attributeId",
+                    "attribute_code" : "code",
+                    "attributevalue_id" : "attributevalueId",
+                    "attributevalue_code" : "code",
+                    "client_attribute" : "hotelSpecialRequests",
+                    "display_order" : 0,
+                    "value" : "value"
+                  }, {
+                    "attribute" : "displayname",
+                    "attribute_id" : "attributeId",
+                    "attribute_code" : "code",
+                    "attributevalue_id" : "attributevalueId",
+                    "attributevalue_code" : "code",
+                    "client_attribute" : "attributevalueId",
+                    "display_order" : 0,
+                    "value" : "value"
+                  } ]
+                } ],
+                "attributes" : [ {
+                  "attributeId" : "attributeId",
+                  "name" : "displayname",
+                  "code" : "code"
+                } ]
+              }
+            }
+          }
+        }
+      }
+    }
+    }
+}

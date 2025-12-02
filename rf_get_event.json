@@ -1,0 +1,182 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "API documentation based off RainFocus API",
+    "version" : "2.0.0",
+    "title" : "RainFocus Get Events"
+  },
+  "host": "events.rainfocus.com",
+  "basePath" : "/api/aspeninstitute/v2",
+  "schemes": [ "https" ],
+  "securityDefinitions" : {
+    "ApiProfileAuth" : {
+      "name" : "apiProfile",
+      "type" : "apiKey",
+      "in" : "header",
+      "description" : "Authorization token"
+    }
+  },
+  "security" : [ {
+    "ApiProfileAuth" : [ ]
+  } ],
+  "paths" : {
+  "/entityDataDump/event" : {
+        "get" : {
+          "summary" : "Event Entity Data Dump Api",
+          "description" : "Paged data dump of events and any attribute values applied to each. Data fields are configurable. ",
+          "produces" : [ "application/json" ],
+          "parameters" : [ {
+            "name" : "status",
+            "in" : "query",
+            "description" : "The event's status.",
+            "required" : false,
+            "type" : "string"
+          }, 
+          {
+            "name" : "type",
+            "in" : "query",
+            "description" : "The event's type.",
+            "required" : false,
+            "type" : "string"
+          }, 
+          {
+            "name" : "code",
+            "in" : "query",
+            "description" : "The event's code.",
+            "required" : false,
+            "type" : "string"
+          }, 
+          {
+            "name" : "externalId",
+            "in" : "query",
+            "description" : "The event's externalId.",
+            "required" : false,
+            "type" : "string"
+          }, 
+          {
+            "name" : "pageSize",
+            "in" : "query",
+            "description" : "For paged api access. The number of results to display per page.",
+            "required" : false,
+            "type" : "string"
+          }, 
+          {
+            "name" : "cursor",
+            "in" : "query",
+            "description" : "The cursor for paged api access. It acts as a type of bookmark for the results list, and takes the form of an eventId.",
+            "required" : false,
+            "type" : "string"
+          }, 
+          {
+            "name" : "attributeValueName",
+            "in" : "query",
+            "description" : "Filter the results and only include those with an attribute value with this name",
+            "required" : false,
+            "type" : "string"
+          }, 
+          {
+            "name" : "attributeValueCode",
+            "in" : "query",
+            "description" : "Filter the results and only include those with an attribute value with this code",
+            "required" : false,
+            "type" : "string"
+          }, 
+          {
+            "name" : "name",
+            "in" : "query",
+            "description" : "The event's name.",
+            "required" : false,
+            "type" : "string"
+          }, 
+          {
+            "name" : "since",
+            "in" : "query",
+            "description" : "Filters results that are modified since a given timestamp, uses millisecond Unix timestamp (ex. 1749243600000 for June 6th, 2025 at 3:00 PM)",
+            "required" : false,
+            "type" : "integer",
+            "format" : "int64"
+          }, 
+          {
+            "name" : "before",
+            "in" : "query",
+            "description" : "Filters results that are modified before a given timestamp, uses millisecond Unix timestamp (ex. 1749243600000 for June 6th, 2025 at 3:00 PM)",
+            "required" : false,
+            "type" : "integer",
+            "format" : "int64"
+          }, 
+          {
+            "name" : "publishedFiles",
+            "in" : "query",
+            "description" : "Allows you to filter down files based on published status, or not.",
+            "required" : false,
+            "type" : "string"
+          } 
+      ],
+          "responses" : {
+            "403" : {
+              "description" : "Access denied, wrong/invalid org"
+            },
+            "422" : {
+              "description" : "Missing required field"
+            },
+            "500" : {
+              "description" : "Unknown error"
+            },
+            "401" : {
+              "description" : "Invalid api profile ID"
+            },
+            "200" : {
+              "description" : "Success",
+              "examples" : {
+                "application/json" : {
+                  "responseCode" : "0",
+                  "responseMessage" : "Success",
+                  "cursor" : "cursor",
+                  "totalSearchItems" : 1,
+                  "timestamp" : "0",
+                  "data" : [ {
+                    "externalId" : "externalId",
+                    "code" : "code",
+                    "name" : "name",
+                    "displayName" : "displayName",
+                    "type" : "type",
+                    "venueName" : "venueName",
+                    "venuePhone" : "venuePhone",
+                    "venueAddress" : "venueAddress",
+                    "website" : "example.rainfocus.com",
+                    "city" : "city",
+                    "stateId" : "stateId",
+                    "foreignstate" : "foreignstate",
+                    "countryId" : "countryId",
+                    "zip" : "zip",
+                    "latitude" : 1.0,
+                    "longitude" : 1.0,
+                    "vatPercentage" : 1.0,
+                    "startDate" : "16:00:00",
+                    "endDate" : "16:00:00",
+                    "startTime" : "16:00:00",
+                    "endTime" : "16:00:00",
+                    "dateFormat" : "dateFormat",
+                    "timeFormat" : "timeFormat",
+                    "timezone" : "timezone",
+                    "externalEventId" : "externalEventId",
+                    "budget" : 1.0,
+                    "description" : "description",
+                    "status" : "code",
+                    "createDate" : "16:00:00Z",
+                    "modifiedDate" : "16:00:00Z",
+                    "eventFamily" : "familyName"
+                  } ],
+                  "attributes" : [ {
+                    "attributeId" : "attributeId",
+                    "name" : "displayname",
+                    "code" : "code"
+                  } ]
+                }
+              }
+            }
+          }
+        }
+      }  
+    }
+}
