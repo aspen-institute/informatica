@@ -138,195 +138,238 @@
       }
     }
   },
-  "definitions" : {
-      "getAttendeeDataDump##attribute" : {
+  "definitions": {
+      "attribute" : {
         "properties" : {
           "attributeId" : {
-            "type" : "string" 
+            "type" : "string",
+            "example": "1761224938387001sVnR"
           },
           "name" : {
-            "type" : "string" 
+            "type" : "string",
+            "example": "Assistant Email "
           },
           "code" : {
-            "type" : "string"
+            "type" : "string",
+            "example" : "1761224938386001sYOl"
           }
         }
       },
     
-      "getAttendeeDataDump##attributevalue" : {
+      "attributevalue" : {
         "properties" : {
           "attribute" : {
-              "type" : "string"
+              "type" : "string",
+              "example": "Assistant Name"
           },
           "attribute_id" : {
-              "type" : "string" 
+              "type" : "string",
+              "example": "1761224965125001ESHx" 
           },
           "attribute_code" : {
-              "type" : "string"
+              "type" : "string",
+              "example": "1761224965124001EFbd"
           },
           "attributevalue_id" : {
-              "type" : "string" 
+              "type" : "string",
+              "example" : "1761224965133002EH5a" 
           },
           "attributevalue_code" : {
-              "type" : "string"
+              "type" : "string",
+              "example": "1761224965133001Emvv"
           },
           "client_attribute" : {
-              "type" : "string" 
+              "type" : "string",
+              "example" : "1761224965124001EFbd" 
           },
           "display_order" : {
               "type" : "number",
-              "format" : "int32"
+              "format" : "int32",
+              "example": 0
           },
           "value" : {
-              "type" : "string"
+              "type" : "string",
+              "example" : "Test Assistant"
           } 
         }
       },
 
-      "getAttendeeDataDump##data##file" : {
+      "file" : {
         "properties" : {
           "fileName" : {
-            "type" : "string"
+            "type" : "string",
+            "example" : "Screenshot 2025-12-02 at 3.35.38 PM.png"
           },
           "fileURL" : {
-            "type" : "string"
+            "type" : "string",
+            "example" : "https://static.rainfocus.com/aspeninstitute/health2026/att/1747839747960001Bp40/attprofile/Screenshot%202025-12-02%20at%203.35.38%E2%80%AFPM_1764867516026001LKVK.png"
           },
           "fileTypeName" : {
-            "type" : "string"
+            "type" : "string",
+            "example": "Attendee Profile Photo"
           },
           "fileTypeCode" : {
-            "type" : "string"
+            "type" : "string",
+            "example": "attprofile"
           },
           "published" : {
-            "type" : "boolean"
+            "type" : "boolean",
+            "example": false
           }
         }
       },
     
-      "getAttendeeDataDump##data" : {
+      "data" : {
         "properties" : {
           "language" : {
-            "type" : "string" 
+            "type" : "string",
+            "example" : "en"
           },
           "createDate" : {
-            "type" : "string"
+            "type" : "string",
+            "example": "2025-11-04T20:41:50Z"
           },
           "modifiedDate" : {
-            "type" : "string"
+            "type" : "string",
+            "example" : "2025-12-04T16:58:39Z"
           },
           "files" : {
             "type" : "array",
             "items" : {
-              "$ref": "#/definitions/getAttendeeDataDump##data##file" 
+              "$ref": "#/definitions/file" 
             }
           },
           "registrationId" : {
-            "type" : "string"
+            "type" : "string",
+            "example" : "REZ1007"
           },
           "badgeId" : {
-            "type" : "string"
+            "type" : "string",
+            "example": "1762288910738001PFgS"
           },
           "firstname" : {
-            "type" : "string"
+            "type" : "string",
+            "example" : "A"
           },
           "lastname" : {
-            "type" : "string" 
+            "type" : "string",
+            "example" : "A"
           },
           "email" : {
-            "type" : "string"
+            "type" : "string",
+            "example" : "aa@r.com"
           },
           "phone" : {
-            "type" : "string" 
+            "type" : "string",
+            "example": "1111111111"
           },
           "attendeeId" : {
-            "type" : "string"
+            "type" : "string",
+            "example" : "1747839747960001Bp40"
           },
           "registered" : {
-            "type" : "boolean" 
+            "type" : "boolean",
+            "example": false 
           },
           "viewAccess" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "example" : "1761330871537011s0LI"
+            }
+          },
+          "viewFileAccess" : {
+            "type" : "array", 
+            "items" : {
+              "type" : "string",
+              "example" : "1761330871537012s8LZ"
             }
           },
           "scheduleAccess" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "example" : "1761330871537012s8LZ"
             }
           }, 
           "attendAccess" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "example" : "1761330871537012s8LZ"
             }
           },
           "waitlistAccess" : {
             "type" : "array",
             "items" : {
-              "type" : "string"
+              "type" : "string",
+              "example" : "1761330871537012s8LZ"
             }
           },
           "inPersonAttendee" : {
-            "type" : "boolean"
+            "type" : "boolean",
+            "example" : false
           },
           "virtualAttendee" : {
-            "type" : "boolean"
+            "type" : "boolean",
+            "example" : false
           },
           "schedulerAccess" : {
-            "type" : "boolean"
+            "type" : "boolean",
+            "example" : false
           },
           "calendarReadOnlyAccess" : {
-            "type" : "boolean" 
+            "type" : "boolean",
+            "example" : false 
           },
           "meetingAccess" : {
-            "type" : "string"
+            "type" : "string",
+            "example" : "0"
           },
           "attributeValues" : {
             "type" : "array",
             "items" : {
-              "$ref": "#/definitions/getAttendeeDataDump##attributevalue" 
+              "$ref": "#/definitions/attributevalue" 
             }
-          },
+          }
         } 
       },
 
     "getAttendeeDataDump" : {
       "properties" : {
         "responseCode" : {
-          "type" : "string" 
+          "type" : "string",
+          "example": "0" 
         },
         "responseMessage" : {
-          "type" : "string"
+          "type" : "string",
+          "example": "Success"
         },
         "totalSearchItems" : {
-          "type" : "integer" 
+          "type" : "integer",
+          "example" : 14 
         },
         "timestamp" : {
-         "type" : "string"  
+         "type" : "string",
+         "example" : "1764869445689"  
         },
         "data" : {
           "type" : "array", 
           "items" : {
-            "$ref" : "#/definitions/getAttendeeDataDump##data"
+            "$ref" : "#/definitions/data"
           }
         },
-        "attendees" : {
+        "attributes" : {
           "type" : "array", 
           "items" : {
-            "$ref" : "#/definitions/getAttendeeDataDump##attribute"
+            "$ref" : "#/definitions/attribute"
           }
+        },
+        "cached" : {
+          "type" : "boolean",
+          "example" : false
         }
       }
-    }
-
-
-    
+    }   
   }
 }
-              
-
-
-
-
