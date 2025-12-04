@@ -128,104 +128,203 @@
           "type" : "string"
         }],
         "responses" : {
-          "404" : {
-            "description" : "No attendees found with the given parameters"
-          },
-          "403" : {
-            "description" : "Access denied, wrong/invalid org"
-          },
-          "422" : {
-            "description" : "Missing required field"
-          },
-          "500" : {
-            "description" : "Unknown error"
-          },
-          "401" : {
-            "description" : "Invalid api profile ID"
-          },
           "200" : {
             "description" : "Success",
-            "examples" : {
-              "application/json" : {
-                "responseCode" : "0",
-                "responseMessage" : "Success",
-                "totalSearchItems" : 1,
-                "timestamp" : "0",
-                "data" : [ {
-                  "attendeeId" : "attendeeId",
-                  "externalId" : "externalId",
-                  "registrationId" : "registrationId",
-                  "badgeId" : "badgeId",
-                  "firstname" : "firstname",
-                  "lastname" : "lastname",
-                  "email" : "example@rainfocus.com",
-                  "jobtitle" : "jobtitle",
-                  "companyname" : "companyname",
-                  "phone" : "phone",
-                  "address1" : "address1",
-                  "address2" : "address2",
-                  "city" : "city",
-                  "stateId" : "stateId",
-                  "state" : "name",
-                  "foreignstate" : "foreignstate",
-                  "zip" : "zip",
-                  "countryId" : "countryId",
-                  "country" : "name",
-                  "registered" : true,
-                  "registeredTime" : "16:00:00",
-                  "registeredDateTime" : "16:00:00",
-                  "registeredDateTimeUtc" : "16:00:00Z",
-                  "checkinTime" : "16:00:00",
-                  "language" : "language",
-                  "createDate" : "16:00:00Z",
-                  "modifiedDate" : "16:00:00Z",
-                  "files" : [ {
-                    "fileName" : "Display Name",
-                    "fileURL" : "filePath",
-                    "fileTypeName" : "name",
-                    "fileTypeCode" : "code",
-                    "published" : false
-                  } ],
-                  "viewAccess" : [ "scheduleaccessId" ],
-                  "viewFilesAccess" : [ "scheduleaccessId" ],
-                  "scheduleAccess" : [ "scheduleaccessId" ],
-                  "attendAccess" : [ "scheduleaccessId" ],
-                  "inPersonAttendee" : true,
-                  "virtualAttendee" : true,
-                  "schedulerAccess" : true,
-                  "calendarReadOnlyAccess" : false,
-                  "meetingAccess" : "0",
-                  "attributeValues" : [ {
-                    "attribute" : "displayname",
-                    "attribute_id" : "attributeId",
-                    "attribute_code" : "code",
-                    "attributevalue_id" : "attributevalueId",
-                    "attributevalue_code" : "code",
-                    "client_attribute" : "hotelSpecialRequests",
-                    "display_order" : 0,
-                    "value" : "value"
-                  }, {
-                    "attribute" : "displayname",
-                    "attribute_id" : "attributeId",
-                    "attribute_code" : "code",
-                    "attributevalue_id" : "attributevalueId",
-                    "attributevalue_code" : "code",
-                    "client_attribute" : "attributevalueId",
-                    "display_order" : 0,
-                    "value" : "value"
-                  } ]
-                } ],
-                "attributes" : [ {
-                  "attributeId" : "attributeId",
-                  "name" : "displayname",
-                  "code" : "code"
-                } ]
-              }
+            "schema" : {
+              "$ref" : "#/definitions/getAttendeeDataDump"
             }
           }
         }
       }
     }
+  },
+  "definitions" : {
+      "getAttendeeDataDump##attribute" : {
+        "properties" : {
+          "attributeId" : {
+            "type" : "string" 
+          },
+          "name" : {
+            "type" : "string" 
+          },
+          "code" : {
+            "type" : "string"
+          }
+        }
+      },
+    
+      "getAttendeeDataDump##attributevalue" : {
+        "properties" : {
+          "attribute" : {
+              "type" : "string"
+          },
+          "attribute_id" : {
+              "type" : "string" 
+          },
+          "attribute_code" : {
+              "type" : "string"
+          },
+          "attributevalue_id" : {
+              "type" : "string" 
+          },
+          "attributevalue_code" : {
+              "type" : "string"
+          },
+          "client_attribute" : {
+              "type" : "string" 
+          },
+          "display_order" : {
+              "type" : "number",
+              "format" : "int32"
+          },
+          "value" : {
+              "type" : "string"
+          } 
+        }
+      },
+
+      "getAttendeeDataDump##data##file" : {
+        "properties" : {
+          "fileName" : {
+            "type" : "string"
+          },
+          "fileURL" : {
+            "type" : "string"
+          },
+          "fileTypeName" : {
+            "type" : "string"
+          },
+          "fileTypeCode" : {
+            "type" : "string"
+          },
+          "published" : {
+            "type" : "boolean"
+          }
+        }
+      },
+    
+      "getAttendeeDataDump##data" : {
+        "properties" : {
+          "language" : {
+            "type" : "string" 
+          },
+          "createDate" : {
+            "type" : "string"
+          },
+          "modifiedDate" : {
+            "type" : "string"
+          },
+          "files" : {
+            "type" : "array",
+            "items" : {
+              "$ref": "#/definitions/getAttendeeDataDump##data##file" 
+            }
+          },
+          "registrationId" : {
+            "type" : "string"
+          },
+          "badgeId" : {
+            "type" : "string"
+          },
+          "firstname" : {
+            "type" : "string"
+          },
+          "lastname" : {
+            "type" : "string" 
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "phone" : {
+            "type" : "string" 
+          },
+          "attendeeId" : {
+            "type" : "string"
+          },
+          "registered" : {
+            "type" : "boolean" 
+          },
+          "viewAccess" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "scheduleAccess" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }, 
+          "attendAccess" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "waitlistAccess" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "inPersonAttendee" : {
+            "type" : "boolean"
+          },
+          "virtualAttendee" : {
+            "type" : "boolean"
+          },
+          "schedulerAccess" : {
+            "type" : "boolean"
+          },
+          "calendarReadOnlyAccess" : {
+            "type" : "boolean" 
+          },
+          "meetingAccess" : {
+            "type" : "string"
+          },
+          "attributeValues" : {
+            "type" : "array",
+            "items" : {
+              "$ref": "#/definitions/getAttendeeDataDump##attributevalue" 
+            }
+          },
+        } 
+      },
+
+    "getAttendeeDataDump" : {
+      "properties" : {
+        "responseCode" : {
+          "type" : "string" 
+        },
+        "responseMessage" : {
+          "type" : "string"
+        },
+        "totalSearchItems" : {
+          "type" : "integer" 
+        },
+        "timestamp" : {
+         "type" : "string"  
+        },
+        "data" : {
+          "type" : "array", 
+          "items" : {
+            "$ref" : "#/definitions/getAttendeeDataDump##data"
+          }
+        },
+        "attendees" : {
+          "type" : "array", 
+          "items" : {
+            "$ref" : "#/definitions/getAttendeeDataDump##attribute"
+          }
+        }
+      }
     }
-}
+
+
+    
+  }
+              
+
+
 
