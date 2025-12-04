@@ -8,17 +8,6 @@
   "host": "events.rainfocus.com",
   "basePath" : "/api/aspeninstitute/v2",
   "schemes": [ "https" ],
-  "securityDefinitions" : {
-    "ApiProfileAuth" : {
-      "name" : "apiProfile",
-      "type" : "apiKey",
-      "in" : "header",
-      "description" : "Authorization token"
-    }
-  },
-  "security" : [ {
-    "ApiProfileAuth" : [ ]
-  } ],
   "paths" : {
   "/entityDataDump/event" : {
         "get" : {
@@ -110,73 +99,202 @@
             "description" : "Allows you to filter down files based on published status, or not.",
             "required" : false,
             "type" : "string"
-          } 
+          },
+          {
+            "name" : "apiProfile",
+            "in" : "header",
+            "description" : "API Profile used to authenticate to specific event and its associated data",
+            "required" : true,
+            "type" : "string"
+          }
       ],
           "responses" : {
-            "403" : {
-              "description" : "Access denied, wrong/invalid org"
-            },
-            "422" : {
-              "description" : "Missing required field"
-            },
-            "500" : {
-              "description" : "Unknown error"
-            },
-            "401" : {
-              "description" : "Invalid api profile ID"
-            },
             "200" : {
-              "description" : "Success",
-              "examples" : {
-                "application/json" : {
-                  "responseCode" : "0",
-                  "responseMessage" : "Success",
-                  "cursor" : "cursor",
-                  "totalSearchItems" : 1,
-                  "timestamp" : "0",
-                  "data" : [ {
-                    "externalId" : "externalId",
-                    "code" : "code",
-                    "name" : "name",
-                    "displayName" : "displayName",
-                    "type" : "type",
-                    "venueName" : "venueName",
-                    "venuePhone" : "venuePhone",
-                    "venueAddress" : "venueAddress",
-                    "website" : "example.rainfocus.com",
-                    "city" : "city",
-                    "stateId" : "stateId",
-                    "foreignstate" : "foreignstate",
-                    "countryId" : "countryId",
-                    "zip" : "zip",
-                    "latitude" : 1.0,
-                    "longitude" : 1.0,
-                    "vatPercentage" : 1.0,
-                    "startDate" : "16:00:00",
-                    "endDate" : "16:00:00",
-                    "startTime" : "16:00:00",
-                    "endTime" : "16:00:00",
-                    "dateFormat" : "dateFormat",
-                    "timeFormat" : "timeFormat",
-                    "timezone" : "timezone",
-                    "externalEventId" : "externalEventId",
-                    "budget" : 1.0,
-                    "description" : "description",
-                    "status" : "code",
-                    "createDate" : "16:00:00Z",
-                    "modifiedDate" : "16:00:00Z",
-                    "eventFamily" : "familyName"
-                  } ],
-                  "attributes" : [ {
-                    "attributeId" : "attributeId",
-                    "name" : "displayname",
-                    "code" : "code"
-                  } ]
+                "description" : "Success", 
+                "schema" : {
+                  "$ref" : "#/definitions/getEventDataDump"
                 }
-              }
             }
           }
         }
-      }  
+      }
+    },
+
+    "definitions": {
+      "attribute" : {
+        "properties" : {
+          "attributeId" : {
+            "type" : "string",
+            "example": "1761224938387001sVnR"
+          },
+          "name" : {
+            "type" : "string",
+            "example": "Assistant Email "
+          },
+          "code" : {
+            "type" : "string",
+            "example" : "1761224938386001sYOl"
+          }
+        }
+      },
+
+      "data" : {
+        "properties" : {
+          "eventId" : {
+            "type" : "string",
+            "example" : "1761330869health2026"
+          },
+          "externalId": {
+            "type" : "string",
+            "example" : "health2026"
+          },
+          "code" : {
+            "type" : "string",
+            "example": "health2026"
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "Aspen Ideas Health 2026"
+          },
+          "displayName" : {
+            "type" : "string",
+            "example" : "Aspen Ideas Health 2026"
+          },
+          "type": {
+            "type" : "string",
+            "example": "Physical"
+          },
+          "venueName" : {
+            "type" : "string",
+            "example" : "The Aspen Instutite/Aspen Meadows Resort"
+          },
+          "venuePhone" : {
+            "type" : "string"
+          },
+          "venueAddress" : {
+            "type" : "string",
+            "example" : "1211211221" 
+          },
+          "website": {
+            "type" : "string",
+            "example" : "https://www.aspenmeadows.com"
+          },
+          "city" : {
+            "type" : "string",
+            "example" : "Aspen"
+          },
+          "stateId" : {
+            "type" : "string",
+            "example" : "CO"
+          },
+          "foreignstate" : {
+            "type" : "string" 
+          },
+          "countryId" : {
+            "type" : "string",
+            "example" : "US"
+          },
+          "zip" : { 
+            "type" : "string",
+            "example" : "81611"
+          },
+          "startDate" : {
+            "type" : "string",
+            "example" : "2026-06-22"
+          },
+          "endDate" : {
+            "type" : "string",
+            "example": "2026-06-25"
+          },
+          "startTime" : {
+            "type" : "string",
+            "example" : "00:00:00"
+          },
+          "endTime" : {
+            "type" : "string",
+            "example" : "23:55:00"
+          },
+          "dateFormat" : { 
+            "type" : "string",
+            "example" : ""
+          },
+          "timeFormat" : {
+            "type" : "string",
+            "example" : ""
+          },
+          "timezone" : {
+            "type" : "string",
+            "example" : "US/Mountain"
+          },
+          "status" : {
+            "type" : "string",
+            "example" : "event_status_active"
+          },
+          "externalEventId": {
+            "type" : "string",
+            "example" : "98f505bc-dad5-4fce-b6c9-c5be731ac79c"
+          },
+          "budget" : {
+            "type" : "number",
+            "format" : "float",
+            "example" : 200.01
+          },
+          "description": {
+            "type" : "string",
+            "example" : "Test Event Swagger"
+          },
+          "createDate": {
+            "type" : "string",
+            "example" : "2025-10-24T18:34:29Z"
+          },
+          "modifiedDate" : {
+            "type" : "string",
+            "example": "2025-10-24T18:34:40Z"
+          },
+          "eventFamily" : {
+            "type" : "string",
+            "example" : "Aspen Ideas"
+          }
+        }
+      },
+
+      
+    "getEventDataDump" : {
+      "properties" : {
+        "responseCode" : {
+          "type" : "string",
+          "example": "0" 
+        },
+        "responseMessage" : {
+          "type" : "string",
+          "example": "Success"
+        },
+        "totalSearchItems" : {
+          "type" : "integer",
+          "example" : 14 
+        },
+        "timestamp" : {
+         "type" : "string",
+         "example" : "1764869445689"  
+        },
+        "data" : {
+          "type" : "array", 
+          "items" : {
+            "$ref" : "#/definitions/data"
+          }
+        },
+        "attributes" : {
+          "type" : "array", 
+          "items" : {
+            "$ref" : "#/definitions/attribute"
+          }
+        },
+        "cached" : {
+          "type" : "boolean",
+          "example" : false
+        }
+      }
+    }   
+
     }
 }
