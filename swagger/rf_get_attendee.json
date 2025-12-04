@@ -9,17 +9,6 @@
   "host": "events.rainfocus.com",
   "basePath" : "/api/aspeninstitute/v2",
   "schemes": [ "https" ],
-  "securityDefinitions" : {
-    "ApiProfileAuth" : {
-      "name" : "apiProfile",
-      "type" : "apiKey",
-      "in" : "header",
-      "description" : "Authorization token"
-    }
-  },
-  "security" : [ {
-    "ApiProfileAuth" : [ ]
-  } ],
   "paths" : {
     "/entityDataDump/attendee" : {
       "get" : {
@@ -130,7 +119,14 @@
           "description" : "Filter based on test account field. (supports true/false OR 1/0)",
           "required" : false,
           "type" : "string"
-        } ],
+        },
+        {
+         "name" : "apiProfile",
+          "in" : "header",
+          "description" : "API Profile Id used to authenticate to specific event and its associated data", 
+          "required" : true,
+          "type" : "string"
+        }],
         "responses" : {
           "404" : {
             "description" : "No attendees found with the given parameters"
@@ -232,3 +228,4 @@
     }
     }
 }
+
