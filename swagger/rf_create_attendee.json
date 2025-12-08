@@ -13,7 +13,7 @@
   "paths": {
     "/attendee/create": {
       "post": {
-        "summary": "Update Attendee",
+        "summary": "Create Attendee",
         "description": "Used to update an attendee. Use the edit/pencil icon to determine which fields should be allowed. Any field chosen will be allowed. Any field not chosen will be ignored. If no fields are chosen, all fields are allowed.",
         "produces": [
           "application/json"
@@ -269,4 +269,5 @@
     }
   }
 }
+
 
