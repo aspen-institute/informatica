@@ -37,7 +37,7 @@
           "name" : "event_id",
           "in" : "path",
           "description" : null,
-          "required" : false,
+          "required" : true,
           "type" : "string"
         } ],
         "responses" : {
