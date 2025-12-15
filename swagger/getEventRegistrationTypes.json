@@ -12,7 +12,7 @@
   "basePath" : "/ea",
   "schemes" : [ "https" ],
   "paths" : {
-    "/{event_id}/registration-types" : {
+    "/events/{event_id}/registration-types" : {
       "get" : {
         "tags" : [ "getEventRegistrationTypes" ],
         "summary" : null,
