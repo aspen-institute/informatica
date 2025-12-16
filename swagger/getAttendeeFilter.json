@@ -179,7 +179,7 @@
           "type" : "string"
         },
         "prefix" : {
-          "type" : "string
+          "type" : "string"
         },
         "deleted" : {
           "type" : "boolean"
@@ -539,3 +539,4 @@
   }
 
 }
+
