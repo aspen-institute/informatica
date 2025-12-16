@@ -178,6 +178,9 @@
         "mobilePhone" : {
           "type" : "string"
         },
+        "prefix" : {
+          "type" : "string
+        },
         "deleted" : {
           "type" : "boolean"
         },
@@ -534,4 +537,5 @@
       }
     }
   }
+
 }
