@@ -23,14 +23,12 @@
             "name": "formId",
             "in": "query",
             "description": "If present will restrict which attributes can be updated to only the attributes added to that form. This includes RainFocus Attributes/custom fields and the attendee's demographic information.",
-            "required": false,
             "type": "string"
           },
           {
             "name": "apiProfile",
             "in": "header",
             "description": "API Profile Id used to authenticate to specific event and its associated data",
-            "required": true,
             "type": "string"
           },
           {
@@ -272,4 +270,3 @@
     }
   }
 }
-
