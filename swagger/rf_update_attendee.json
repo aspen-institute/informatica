@@ -36,7 +36,6 @@
           {
             "name": "Request body",
             "in": "body",
-            "required": true,
             "schema": {
               "$ref": "#/definitions/postBody"
             }
@@ -273,3 +272,4 @@
     }
   }
 }
+
