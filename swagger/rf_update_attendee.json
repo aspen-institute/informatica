@@ -43,31 +43,7 @@
           }
         ],
         "responses": {
-          "400": {
-            "description": "Invalid request"
-          },
-          "404": {
-            "description": "Not found"
-          },
-          "409": {
-            "description": "Already exists"
-          },
-          "422": {
-            "description": "Missing required field"
-          },
-          "503": {
-            "description": "Error storing photo url, skipping"
-          },
-          "403": {
-            "description": "Access denied, wrong/invalid api org"
-          },
-          "500": {
-            "description": "Unknown error"
-          },
-          "401": {
-            "description": "Invalid api profile ID"
-          },
-          "201": {
+          "200": {
             "description": "Success",
             "schema": {
               "$ref": "#/definitions/responseBody"
@@ -79,10 +55,6 @@
   },
   "definitions": {
     "postBody": {
-      "type": "object",
-      "required": [
-        "attendeeId"
-      ],
       "properties": {
         "attendeeId": {
           "type": "string"
@@ -301,4 +273,3 @@
     }
   }
 }
-
