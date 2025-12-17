@@ -1,270 +1,178 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "description": "API documentation based off RainFocus API",
-    "version": "2.0.0",
-    "title": "RainFocus Update Attendee"
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
   },
-  "host": "events.rainfocus.com",
-  "basePath": "/api/aspeninstitute/v2",
-  "schemes": [
-    "https"
-  ],
-  "paths": {
-    "/attendee/update": {
-      "post": {
-        "summary": "Update Attendee",
-        "description": "Used to update an attendee. Use the edit/pencil icon to determine which fields should be allowed. Any field chosen will be allowed. Any field not chosen will be ignored. If no fields are chosen, all fields are allowed.",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "formId",
-            "in": "query",
-            "description": "If present will restrict which attributes can be updated to only the attributes added to that form. This includes RainFocus Attributes/custom fields and the attendee's demographic information.",
-            "type": "string"
-          },
-          {
-            "name": "apiProfile",
-            "in": "header",
-            "description": "API Profile Id used to authenticate to specific event and its associated data",
-            "type": "string"
-          },
-          {
-            "name": "Request body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/postBody"
-            }
+  "host" : "events.rainfocus.com",
+  "basePath" : "/api/aspeninstitute/v2",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/attendee/update" : {
+      "post" : {
+        "tags" : [ "updateRFAttendee" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "updateRFAttendee",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "formId",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "description" : null,
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/updateRFAttendee_Request##body"
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/responseBody"
+        }, {
+          "name" : "apiProfile",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/updateRFAttendee"
             }
           }
         }
       }
     }
   },
-  "definitions": {
-    "postBody": {
-      "properties": {
-        "attendeeId": {
-          "type": "string"
+  "definitions" : {
+    "updateRFAttendee" : {
+      "properties" : {
+        "responseCode" : {
+          "type" : "string"
         },
-        "1763603665061001hX8l": {
-          "type": "string",
-          "description": "Cvent Registration Type Updated by Attribute Code"
+        "responseMessage" : {
+          "type" : "string"
         },
-        "externalId": {
-          "type": "string"
+        "attendeeId" : {
+          "type" : "string"
         },
-        "clientId": {
-          "type": "string"
-        },
-        "1764081315990001isaO": {
-          "type": "string",
-          "description": "UW Affiliation Updated by Attribute Code"
-        },
-        "1761225782351001lda1": {
-          "type": "string",
-          "description": "Prefix Field Updated by Attribute Code"
-        },
-        "email": {
-          "type": "string"
-        },
-        "firstname": {
-          "type": "string"
-        },
-        "lastname": {
-          "type": "string"
-        },
-        "1761225335484001viMZ": {
-          "type": "string",
-          "description": "CC Email Address Updated by Attribute Code"
-        },
-        "jobtitle": {
-          "type": "string"
-        },
-        "companyname": {
-          "type": "string"
-        },
-        "countryId": {
-          "type": "string"
-        },
-        "address1": {
-          "type": "string"
-        },
-        "address2": {
-          "type": "string"
-        },
-        "city": {
-          "type": "string"
-        },
-        "stateId": {
-          "type": "string"
-        },
-        "zip": {
-          "type": "string"
-        },
-        "1761224965124001EFbd": {
-          "type": "string",
-          "description": "Assistant Name Updated by Attribute Code"
-        },
-        "1761224938386001sYOl": {
-          "type": "string",
-          "description": "Assistant Email Updated by Attribute Code"
-        },
-        "1761225134802001WCo2": {
-          "type": "string",
-          "description": "Assistant Phone Updated by Attribute Code"
-        },
-        "phone": {
-          "type": "string"
-        },
-        "1761226198363001WCk1": {
-          "type": "string",
-          "description": "Accessibility Updated by Attribute Code"
-        },
-        "1763602936593001AKog": {
-          "type": "string",
-          "description": "Gender Updated by Attribute Code"
-        },
-        "1763602404775001sQLk": {
-          "type": "string",
-          "description": "Age Updated by Attribute Code"
-        },
-        "1763602796318001hmoi": {
-          "type": "string",
-          "description": "Ethnicity Updated by Attribute Code"
-        },
-        "1763602693742001w1X6": {
-          "type": "string",
-          "description": "Education Updated by Attribute Code"
-        },
-        "1763602551336001heWD": {
-          "type": "string",
-          "description": "Business Sector Updated by Attribute Code"
-        },
-        "1761226507809001mQaA": {
-          "type": "string",
-          "description": "Speaker Release Agreement Updated by Attribute Code"
-        },
-        "1759349827987001IYak": {
-          "type": "string",
-          "description": "Speaker Release Notes Updated by Attribute Code"
-        },
-        "websiteUrl": {
-          "type": "string",
-          "description": "Website URL Updated by Attribute Code"
-        },
-        "twitter": {
-          "type": "string",
-          "description": "Twitter Updated by Attribute Code"
-        },
-        "instagram": {
-          "type": "string",
-          "description": "Instagram Updated By Attribute Code"
-        },
-        "linkedin": {
-          "type": "string",
-          "description": "LinkedIn Updated By Attribute Code"
-        },
-        "1763603039658001OMUJ": {
-          "type": "string",
-          "description": "Bookstore Updated By Attribute Code"
-        },
-        "1761225281934001E1OC": {
-          "type": "string",
-          "description": "Submitted Bio Updated By Attribute Code"
-        },
-        "1761226370223001kuXM": {
-          "type": "string",
-          "description": "Passion or Hobby Updated By Attribute Code"
-        },
-        "1763604819777001hpIP": {
-          "type": "string",
-          "description": "Room in designated speaker Updated By Attribute Code"
-        },
-        "1761225398940001ujRu": {
-          "type": "string",
-          "description": "Festival Fest Availability Updated By Attribute Code"
-        },
-        "1763604547455001h3d4": {
-          "type": "string",
-          "description": "Hotel Room Preferences Updated By Attribute Code"
-        },
-        "1762218091956001KiGl": {
-          "type": "string",
-          "description": "Travel Through AI Updated By Attribute Code"
-        },
-        "1763604508719001OTcN": {
-          "type": "string",
-          "description": "Guest First Name Updated By Attribute Code"
-        },
-        "1763604528099001pUBe": {
-          "type": "string",
-          "description": "Guest Last Name Updated By Attribute Code"
-        },
-        "1759349718017001CgaS": {
-          "type": "string",
-          "description": "Security Updated By Attribute Code"
-        },
-        "1761226456556001sfyr": {
-          "type": "string",
-          "description": "Security Personnel Details Updated By Attribute Code"
-        },
-        "foreignstate": {
-          "type": "string"
-        },
-        "bio": {
-          "type": "string"
-        },
-        "email2": {
-          "type": "string"
-        },
-        "sendOnlyEmail2": {
-          "type": "boolean"
-        },
-        "language": {
-          "type": "string"
-        },
-        "photoUrl": {
-          "type": "string"
-        },
-        "photoUrlName": {
-          "type": "string"
-        },
-        "invoiceEmail": {
-          "type": "boolean"
-        },
-        "1762820341967001t2iv": {
-          "type": "string"
+        "registrationId" : {
+          "type" : "string"
         }
       }
     },
-    "responseBody": {
-      "type": "object",
-      "properties": {
-        "responseCode": {
-          "type": "string",
-          "example": "0"
+    "updateRFAttendee_Request##body" : {
+      "properties" : {
+        "attendeeId" : {
+          "type" : "string"
         },
-        "responseMessage": {
-          "type": "string",
-          "example": "Success"
+        "externalId" : {
+          "type" : "string"
         },
-        "attendeeId": {
-          "type": "string",
-          "example": "1747839747960001Bp40"
+        "firstname" : {
+          "type" : "string"
         },
-        "registrationId": {
-          "type": "string",
-          "example": "REZ1007"
+        "lastname" : {
+          "type" : "string"
+        },
+        "1763603665061001hX8l" : {
+          "type" : "string"
+        },
+        "jobtitle" : {
+          "type" : "string"
+        },
+        "1764081315990001isaO" : {
+          "type" : "string"
+        },
+        "company" : {
+          "type" : "string"
+        },
+        "address1" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "countryId" : {
+          "type" : "string"
+        },
+        "zip" : {
+          "type" : "string"
+        },
+        "1761224965124001EFbd" : {
+          "type" : "string"
+        },
+        "1761224938386001sYOl" : {
+          "type" : "string"
+        },
+        "1761225134802001WCo2" : {
+          "type" : "string"
+        },
+        "phone" : {
+          "type" : "string"
+        },
+        "1761226198363001WCk1" : {
+          "type" : "string"
+        },
+        "1763602936593001AKog" : {
+          "type" : "string"
+        },
+        "1763602404775001sQLk" : {
+          "type" : "string"
+        },
+        "1763602693742001w1X6" : {
+          "type" : "string"
+        },
+        "1763602551336001heWD" : {
+          "type" : "string"
+        },
+        "1761226507809001mQaA" : {
+          "type" : "string"
+        },
+        "1759349827987001IYak" : {
+          "type" : "string"
+        },
+        "websiteUrl" : {
+          "type" : "string"
+        },
+        "instagram" : {
+          "type" : "string"
+        },
+        "1761225281934001E1OC" : {
+          "type" : "string"
+        },
+        "1761226370223001kuXM" : {
+          "type" : "string"
+        },
+        "1761225398940001ujRu" : {
+          "type" : "string"
+        },
+        "1759349718017001CgaS" : {
+          "type" : "string"
+        },
+        "1761226456556001sfyr" : {
+          "type" : "string"
+        },
+        "1762820341967001t2iv" : {
+          "type" : "string"
+        }
+      }
+    },
+    "updateRFAttendee_Request" : {
+      "properties" : {
+        "body" : {
+          "$ref" : "#/definitions/updateRFAttendee_Request##body"
         }
       }
     }
