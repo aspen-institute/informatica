@@ -93,11 +93,11 @@
     "getAttendeesFilter##data##contact##_links" : {
         "properties" : {
           "linkedInUrl" : {
-              "$ref" : "#/definitions/getAttendeesFilter##contact##_links##linkedInUrl"
+              "$ref" : "#/definitions/getAttendeesFilter##data##contact##_links##linkedInUrl"
           }
         }
     },
-    "getAttendeesFilter##paging##_links##linkedInUrl" : {
+    "getAttendeesFilter##data##contact##_links##linkedInUrl" : {
       "properties" : {
         "href" : {
           "type" : "string"
@@ -556,5 +556,6 @@
   }
 
 }
+
 
 
