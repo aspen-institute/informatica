@@ -90,6 +90,20 @@
         }
       }
     },
+    "getAttendeesFilter##data##contact##_links" : {
+        "properties" : {
+          "linkedInUrl" : {
+              "$ref" : "#/definitions/getAttendeesFilter##contact##_links##linkedInUrl"
+          }
+        }
+    },
+    "getAttendeesFilter##paging##_links##linkedInUrl" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
     "getAttendeesFilter##paging" : {
       "properties" : {
         "_links" : {
@@ -127,6 +141,9 @@
     },
     "getAttendeesFilter##data##contact" : {
       "properties" : {
+        "_links" : {
+          "$ref" : "#/definitions/getAttendeesFilter##data##contact##_links"
+        },
         "createdBy" : {
           "type" : "string"
         },
@@ -539,4 +556,5 @@
   }
 
 }
+
 
