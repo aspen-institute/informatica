@@ -83,6 +83,9 @@
         "lastname" : {
           "type" : "string"
         },
+        "companyname": {
+          "type" : "string"
+        },
         "1763603665061001hX8l" : {
           "type" : "string"
         },
@@ -96,6 +99,9 @@
           "type" : "string"
         },
         "address1" : {
+          "type" : "string"
+        },
+        "address2" : {
           "type" : "string"
         },
         "city" : {
@@ -166,6 +172,12 @@
         },
         "1762820341967001t2iv" : {
           "type" : "string"
+        },
+        "1763602796318001hmoi" : {
+          "type": "string"
+        },
+        "1763604399954001AKP6" : {
+          "type" : "string"
         }
       }
     },
@@ -178,3 +190,4 @@
     }
   }
 }
+
