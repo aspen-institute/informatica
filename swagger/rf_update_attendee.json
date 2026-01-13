@@ -149,6 +149,12 @@
         "1759349827987001IYak" : {
           "type" : "string"
         },
+        "1763604547455001h3d4" : {
+          "type": "string"
+        },
+        "1763604819777001hpIP": {
+          "type": "string"
+        },
         "websiteUrl" : {
           "type" : "string"
         },
@@ -179,8 +185,26 @@
         "1763604399954001AKP6" : {
           "type" : "string"
         },
+        "1761225335484001viMZ": {
+          "type": "string"
+        },
+        "1761225782351001lda1": {
+          "type": "string"
+        },
+        "1763603039658001OMUJ": {
+          "type": "string"
+        },
         "linkedin" : {
           "type" : "string"
+        },
+        "twitter": {
+          "type": "string"
+        },
+        "1763604508719001OTcN": {
+          "type": "string"
+        },
+        "1763604528099001pUBe": {
+          "type": "string"
         }
       }
     },
@@ -193,5 +217,6 @@
     }
   }
 }
+
 
 
