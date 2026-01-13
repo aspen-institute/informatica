@@ -94,6 +94,9 @@
         "properties" : {
           "linkedInUrl" : {
               "$ref" : "#/definitions/getAttendeesFilter##data##contact##_links##linkedInUrl"
+          },
+          "twitterUrl": {
+              "$ref" : "#/definitions/getAttendeesFilter##data##contact##_links##linkedInUrl"
           }
         }
     },
@@ -556,6 +559,7 @@
   }
 
 }
+
 
 
 
