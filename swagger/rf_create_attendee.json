@@ -71,9 +71,6 @@
     },
     "createRFAttendee_Request##body" : {
       "properties" : {
-        "email" : {
-          "type" : "string"
-        },
         "externalId" : {
           "type" : "string"
         },
@@ -81,6 +78,12 @@
           "type" : "string"
         },
         "lastname" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "companyname": {
           "type" : "string"
         },
         "1763603665061001hX8l" : {
@@ -96,6 +99,9 @@
           "type" : "string"
         },
         "address1" : {
+          "type" : "string"
+        },
+        "address2" : {
           "type" : "string"
         },
         "city" : {
@@ -143,6 +149,12 @@
         "1759349827987001IYak" : {
           "type" : "string"
         },
+        "1763604547455001h3d4" : {
+          "type": "string"
+        },
+        "1763604819777001hpIP": {
+          "type": "string"
+        },
         "websiteUrl" : {
           "type" : "string"
         },
@@ -166,6 +178,33 @@
         },
         "1762820341967001t2iv" : {
           "type" : "string"
+        },
+        "1763602796318001hmoi" : {
+          "type": "string"
+        },
+        "1763604399954001AKP6" : {
+          "type" : "string"
+        },
+        "1761225335484001viMZ": {
+          "type": "string"
+        },
+        "1761225782351001lda1": {
+          "type": "string"
+        },
+        "1763603039658001OMUJ": {
+          "type": "string"
+        },
+        "linkedin" : {
+          "type" : "string"
+        },
+        "twitter": {
+          "type": "string"
+        },
+        "1763604508719001OTcN": {
+          "type": "string"
+        },
+        "1763604528099001pUBe": {
+          "type": "string"
         }
       }
     },
@@ -178,3 +217,4 @@
     }
   }
 }
+
