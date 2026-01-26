@@ -210,7 +210,7 @@
           "type": "string"
         },
         "1761226487457001oNsV": {
-          "type": "string"
+          "type": "boolean"
         }
       }
     },
@@ -223,6 +223,7 @@
     }
   }
 }
+
 
 
 
