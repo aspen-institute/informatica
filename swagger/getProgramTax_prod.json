@@ -19,7 +19,6 @@
         "description" : null,
         "operationId" : "getProgramTax",
         "produces" : [ "application/json" ],
-        "consumes" : [ "application/json" ],
         "parameters" : [ {
           "name" : "slug",
           "in" : "query",
