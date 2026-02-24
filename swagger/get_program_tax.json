@@ -1,0 +1,364 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "www.aspeninstitute.org",
+  "basePath" : "/wp-json/wp/w2",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/program_tax" : {
+      "get" : {
+        "tags" : [ "get_program_tax" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "get_program_tax",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/get_program_tax"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "get_program_tax##meta" : {
+      "properties" : {
+        "_post_type_term" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "get_program_tax##yoast_head_json##robots" : {
+      "properties" : {
+        "index" : {
+          "type" : "string"
+        },
+        "follow" : {
+          "type" : "string"
+        }
+      }
+    },
+    "get_program_tax##yoast_head_json##og_image" : {
+      "properties" : {
+        "width" : {
+          "type" : "number"
+        },
+        "height" : {
+          "type" : "number"
+        },
+        "url" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      }
+    },
+    "get_program_tax##yoast_head_json##schema##@graph##isPartOf" : {
+      "properties" : {
+        "@id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "get_program_tax##yoast_head_json##schema##@graph##breadcrumb" : {
+      "properties" : {
+        "@id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "get_program_tax##yoast_head_json##schema##@graph##itemListElement" : {
+      "properties" : {
+        "@type" : {
+          "type" : "string"
+        },
+        "position" : {
+          "type" : "number"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "item" : {
+          "type" : "string"
+        }
+      }
+    },
+    "get_program_tax##yoast_head_json##schema##@graph##potentialAction##target" : {
+      "properties" : {
+        "@type" : {
+          "type" : "string"
+        },
+        "urlTemplate" : {
+          "type" : "string"
+        }
+      }
+    },
+    "get_program_tax##yoast_head_json##schema##@graph##potentialAction##query-input" : {
+      "properties" : {
+        "@type" : {
+          "type" : "string"
+        },
+        "valueRequired" : {
+          "type" : "boolean"
+        },
+        "valueName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "get_program_tax##yoast_head_json##schema##@graph##potentialAction" : {
+      "properties" : {
+        "@type" : {
+          "type" : "string"
+        },
+        "target" : {
+          "$ref" : "#/definitions/get_program_tax##yoast_head_json##schema##@graph##potentialAction##target"
+        },
+        "query-input" : {
+          "$ref" : "#/definitions/get_program_tax##yoast_head_json##schema##@graph##potentialAction##query-input"
+        }
+      }
+    },
+    "get_program_tax##yoast_head_json##schema##@graph" : {
+      "properties" : {
+        "@type" : {
+          "type" : "string"
+        },
+        "@id" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "isPartOf" : {
+          "$ref" : "#/definitions/get_program_tax##yoast_head_json##schema##@graph##isPartOf"
+        },
+        "breadcrumb" : {
+          "$ref" : "#/definitions/get_program_tax##yoast_head_json##schema##@graph##breadcrumb"
+        },
+        "inLanguage" : {
+          "type" : "string"
+        },
+        "itemListElement" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/get_program_tax##yoast_head_json##schema##@graph##itemListElement"
+          }
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "potentialAction" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/get_program_tax##yoast_head_json##schema##@graph##potentialAction"
+          }
+        }
+      }
+    },
+    "get_program_tax##yoast_head_json##schema" : {
+      "properties" : {
+        "@context" : {
+          "type" : "string"
+        },
+        "@graph" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/get_program_tax##yoast_head_json##schema##@graph"
+          }
+        }
+      }
+    },
+    "get_program_tax##yoast_head_json" : {
+      "properties" : {
+        "title" : {
+          "type" : "string"
+        },
+        "robots" : {
+          "$ref" : "#/definitions/get_program_tax##yoast_head_json##robots"
+        },
+        "og_locale" : {
+          "type" : "string"
+        },
+        "og_type" : {
+          "type" : "string"
+        },
+        "og_title" : {
+          "type" : "string"
+        },
+        "og_url" : {
+          "type" : "string"
+        },
+        "og_site_name" : {
+          "type" : "string"
+        },
+        "og_image" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/get_program_tax##yoast_head_json##og_image"
+          }
+        },
+        "twitter_card" : {
+          "type" : "string"
+        },
+        "twitter_site" : {
+          "type" : "string"
+        },
+        "schema" : {
+          "$ref" : "#/definitions/get_program_tax##yoast_head_json##schema"
+        }
+      }
+    },
+    "get_program_tax##_links##self##targetHints" : {
+      "properties" : {
+        "allow" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "get_program_tax##_links##self" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        },
+        "targetHints" : {
+          "$ref" : "#/definitions/get_program_tax##_links##self##targetHints"
+        }
+      }
+    },
+    "get_program_tax##_links##collection" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "get_program_tax##_links##about" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "get_program_tax##_links##wp:post_type" : {
+      "properties" : {
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "get_program_tax##_links##curies" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "href" : {
+          "type" : "string"
+        },
+        "templated" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "get_program_tax##_links" : {
+      "properties" : {
+        "self" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/get_program_tax##_links##self"
+          }
+        },
+        "collection" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/get_program_tax##_links##collection"
+          }
+        },
+        "about" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/get_program_tax##_links##about"
+          }
+        },
+        "wp:post_type" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/get_program_tax##_links##wp:post_type"
+          }
+        },
+        "curies" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/get_program_tax##_links##curies"
+          }
+        }
+      }
+    },
+    "get_program_tax" : {
+      "properties" : {
+        "id" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "count" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "link" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "slug" : {
+          "type" : "string"
+        },
+        "taxonomy" : {
+          "type" : "string"
+        },
+        "parent" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "meta" : {
+          "$ref" : "#/definitions/get_program_tax##meta"
+        },
+        "yoast_head" : {
+          "type" : "string"
+        },
+        "yoast_head_json" : {
+          "$ref" : "#/definitions/get_program_tax##yoast_head_json"
+        },
+        "_links" : {
+          "$ref" : "#/definitions/get_program_tax##_links"
+        }
+      }
+    }
+  }
+}
