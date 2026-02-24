@@ -3,10 +3,7 @@
   "info" : {
     "description" : null,
     "version" : "1.0.0",
-    "title" : null,
-    "termsOfService" : null,
-    "contact" : null,
-    "license" : null
+    "title" : "WordPress Get Program Tax"
   },
   "host" : "www.aspeninstitute.org",
   "basePath" : "/wp-json/wp/v2",
@@ -14,22 +11,19 @@
   "paths" : {
     "/program_tax" : {
       "get" : {
-        "tags" : [ "getProgramTax" ],
-        "summary" : null,
-        "description" : null,
-        "operationId" : "getProgramTax",
+        "summary" : "Get Program Tax",
+        "description" : "Retrieves a list of Program Tax information",
         "produces" : [ "application/json" ],
-        "consumes" : [ "application/json" ],
         "parameters" : [ {
           "name" : "slug",
           "in" : "query",
-          "description" : null,
+          "description" : "Identifier separated by dashes",
           "required" : false,
           "type" : "string"
         } ],
         "responses" : {
           "200" : {
-            "description" : "successful operation",
+            "description" : "Successful Operation",
             "schema" : {
               "type" : "array",
               "items" : {
