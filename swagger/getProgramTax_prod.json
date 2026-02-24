@@ -8,6 +8,12 @@
   "host" : "www.aspeninstitute.org",
   "basePath" : "/wp-json/wp/v2",
   "schemes" : [ "https" ],
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic",
+      "description": "Authentication using UserName and API Key"
+    }
+  },
   "paths" : {
     "/program_tax" : {
       "get" : {
@@ -20,7 +26,7 @@
           "description" : "Identifier separated by dashes",
           "required" : false,
           "type" : "string"
-        } ],
+        }],
         "responses" : {
           "200" : {
             "description" : "Successful Operation",
@@ -31,7 +37,12 @@
               }
             }
           }
-        }
+        },
+        "security" : [
+          {
+          "basicAuth": []
+          }
+        ],
       }
     }
   },
