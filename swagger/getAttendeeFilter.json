@@ -26,7 +26,15 @@
           "description" : null,
           "required" : false,
           "type" : "string"
-        }, {
+        }, 
+          {
+          "name" : "limit",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "integer"
+        }, 
+          {
           "name" : "token",
           "in" : "query",
           "description" : null,
