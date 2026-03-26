@@ -35,6 +35,13 @@
           "type" : "integer"
         }, 
           {
+          "name" : "sort",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        },
+          {
           "name" : "token",
           "in" : "query",
           "description" : null,
@@ -47,7 +54,15 @@
           "description" : null,
           "required" : false,
           "type" : "string"
-        }, {
+        },  
+          {
+          "name" : "before",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        },  
+          {
           "name" : "body",
           "in" : "body",
           "description" : null,
@@ -55,7 +70,8 @@
           "schema" : {
             "$ref" : "#/definitions/getAttendeesFilter_Request##body"
           }
-        }, {
+        }, 
+          {
           "name" : "Authorization",
           "in" : "header",
           "description" : null,
