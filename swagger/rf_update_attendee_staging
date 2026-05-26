@@ -1,0 +1,260 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "events.stg.rainfocus.com",
+  "basePath" : "/api/aspeninstitute/v2",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/attendee/update" : {
+      "post" : {
+        "tags" : [ "updateRFAttendee" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "updateRFAttendee",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "formId",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "body",
+          "in" : "body",
+          "description" : null,
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/updateRFAttendee_Request##body"
+          }
+        }, {
+          "name" : "apiProfile",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/updateRFAttendee"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "updateRFAttendee" : {
+      "properties" : {
+        "responseCode" : {
+          "type" : "string"
+        },
+        "responseMessage" : {
+          "type" : "string"
+        },
+        "attendeeId" : {
+          "type" : "string"
+        },
+        "registrationId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "updateRFAttendee_Request##body" : {
+      "properties" : {
+        "attendeeId" : {
+          "type" : "string"
+        },
+        "externalId" : {
+          "type" : "string"
+        },
+        "firstname" : {
+          "type" : "string"
+        },
+        "lastname" : {
+          "type" : "string"
+        },
+        "companyname": {
+          "type" : "string"
+        },
+        "1763603665061001hX8l" : {
+          "type" : "string"
+        },
+        "jobtitle" : {
+          "type" : "string"
+        },
+        "1764081315990001isaO" : {
+          "type" : "string"
+        },
+        "company" : {
+          "type" : "string"
+        },
+        "address1" : {
+          "type" : "string"
+        },
+        "address2" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "countryId" : {
+          "type" : "string"
+        },
+        "zip" : {
+          "type" : "string"
+        },
+        "1761224965124001EFbd" : {
+          "type" : "string"
+        },
+        "1761224938386001sYOl" : {
+          "type" : "string"
+        },
+        "1761225134802001WCo2" : {
+          "type" : "string"
+        },
+        "phone" : {
+          "type" : "string"
+        },
+        "1761226198363001WCk1" : {
+          "type" : "string"
+        },
+        "1763602936593001AKog" : {
+          "type" : "string"
+        },
+        "1763602404775001sQLk" : {
+          "type" : "string"
+        },
+        "1763602693742001w1X6" : {
+          "type" : "string"
+        },
+        "1763602551336001heWD" : {
+          "type" : "string"
+        },
+        "1761226507809001mQaA" : {
+          "type" : "string"
+        },
+        "1759349827987001IYak" : {
+          "type" : "string"
+        },
+        "1763604547455001h3d4" : {
+          "type": "string"
+        },
+        "1763604819777001hpIP": {
+          "type": "string"
+        },
+        "websiteUrl" : {
+          "type" : "string"
+        },
+        "instagram" : {
+          "type" : "string"
+        },
+        "1761225281934001E1OC" : {
+          "type" : "string"
+        },
+        "1759349718017001CgaS" : {
+          "type" : "string"
+        },
+        "1761226456556001sfyr" : {
+          "type" : "string"
+        },
+        "1762820341967001t2iv" : {
+          "type" : "string"
+        },
+        "1763602796318001hmoi" : {
+          "type": "string"
+        },
+        "1761225335484001viMZ": {
+          "type": "string"
+        },
+        "1761225782351001lda1": {
+          "type": "string"
+        },
+        "1763603039658001OMUJ": {
+          "type": "string"
+        },
+        "linkedin" : {
+          "type" : "string"
+        },
+        "twitter": {
+          "type": "string"
+        },
+        "1763604508719001OTcN": {
+          "type": "string"
+        },
+        "1763604528099001pUBe": {
+          "type": "string"
+        },
+        "1762218091956001KiGl": {
+          "type": "string"
+        },
+        "1769193964193001P9t7":{
+          "type": "string"
+        },
+        "1763604340436001AFNU": {
+          "type": "string" 
+        },
+        "1763604192832001paBt": {
+          "type": "string"
+        },
+        "1761226487457001oNsV": {
+          "type": "string"
+        },
+        "1763745030344001pzq3": {
+          "type": "string"
+        },
+        "1763604399954001AKP6": {
+          "type": "string"
+        },
+        "checkbox15_1771958150370": {
+          "type": "string" 
+        },
+        "checkbox16_1771958181943": {
+          "type": "string" 
+        },
+        "1772132241429001D85s": {
+          "type": "string"
+        },
+        "1763604613069001hOiU" : {
+          "type": "string"
+        },
+        "1763604630721001yHF1": {
+          "type": "string"
+        }
+      }
+    },
+    "updateRFAttendee_Request" : {
+      "properties" : {
+        "body" : {
+          "$ref" : "#/definitions/updateRFAttendee_Request##body"
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
