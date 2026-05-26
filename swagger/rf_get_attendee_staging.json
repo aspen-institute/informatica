@@ -1,0 +1,375 @@
+{
+  "swagger" : "2.0",
+
+  "info" : {
+    "description" : "API documentation based off RainFocus API",
+    "version" : "2.0.0",
+    "title" : "RainFocus Get Attendee"
+  },  
+  "host": "events.stg.rainfocus.com",
+  "basePath" : "/api/aspeninstitute/v2",
+  "schemes": [ "https" ],
+  "paths" : {
+    "/entityDataDump/attendee" : {
+      "get" : {
+        "summary" : "Attendee Entity Data Dump",
+        "description" : "Paged dump of all attendees for an event. Data fields are configurable.\nThe results of this api are cached for 1 minute.",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "attendeeId",
+          "in" : "query",
+          "description" : "Attendee's Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "externalId",
+          "in" : "query",
+          "description" : "Attendee's External Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "registrationId",
+          "in" : "query",
+          "description" : "Attendee's Registration Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "registered",
+          "in" : "query",
+          "description" : "Attendee's true/false registered state. (supports true/false OR 1/0)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "clientId",
+          "in" : "query",
+          "description" : "Attendee's Client Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "query",
+          "description" : "Attendee's email",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "badgeId",
+          "in" : "query",
+          "description" : "Attendee's Badge Id",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "Set the number of results per page of results (default = 1000)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "cursor",
+          "in" : "query",
+          "description" : "The cursor acts as a type of bookmark for the results list",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "attributeValueName",
+          "in" : "query",
+          "description" : "Filter the results and only include those with an attribute value with this name",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "attributeValueCode",
+          "in" : "query",
+          "description" : "Filter the results and only include those with an attribute value with this code",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "attended",
+          "in" : "query",
+          "description" : "Attendee's true/false attended state. (supports true/false OR 1/0)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "checkedIn",
+          "in" : "query",
+          "description" : "Attendee's true/false checked in state. (supports true/false OR 1/0)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "since",
+          "in" : "query",
+          "description" : "Filters results that are modified since a given timestamp, uses millisecond Unix timestamp (ex. 1749243600000 for June 6th, 2025 at 3:00 PM)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "before",
+          "in" : "query",
+          "description" : "Filters results that are modified before a given timestamp, uses millisecond Unix timestamp (ex. 1749243600000 for June 6th, 2025 at 3:00 PM)",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "publishedFiles",
+          "in" : "query",
+          "description" : "Allows you to filter down files based on published status, or not.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "testAccount",
+          "in" : "query",
+          "description" : "Filter based on test account field. (supports true/false OR 1/0)",
+          "required" : false,
+          "type" : "string"
+        },
+        {
+         "name" : "apiProfile",
+          "in" : "header",
+          "description" : "API Profile Id used to authenticate to specific event and its associated data", 
+          "required" : true,
+          "type" : "string"
+        }],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/getAttendeeDataDump"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+      "attribute" : {
+        "properties" : {
+          "attributeId" : {
+            "type" : "string",
+            "example": "1761224938387001sVnR"
+          },
+          "name" : {
+            "type" : "string",
+            "example": "Assistant Email "
+          },
+          "code" : {
+            "type" : "string",
+            "example" : "1761224938386001sYOl"
+          }
+        }
+      },
+    
+      "attributevalue" : {
+        "properties" : {
+          "attribute" : {
+              "type" : "string",
+              "example": "Assistant Name"
+          },
+          "attribute_id" : {
+              "type" : "string",
+              "example": "1761224965125001ESHx" 
+          },
+          "attribute_code" : {
+              "type" : "string",
+              "example": "1761224965124001EFbd"
+          },
+          "attributevalue_id" : {
+              "type" : "string",
+              "example" : "1761224965133002EH5a" 
+          },
+          "attributevalue_code" : {
+              "type" : "string",
+              "example": "1761224965133001Emvv"
+          },
+          "client_attribute" : {
+              "type" : "string",
+              "example" : "1761224965124001EFbd" 
+          },
+          "display_order" : {
+              "type" : "number",
+              "format" : "int32",
+              "example": 0
+          },
+          "value" : {
+              "type" : "string",
+              "example" : "Test Assistant"
+          } 
+        }
+      },
+
+      "file" : {
+        "properties" : {
+          "fileName" : {
+            "type" : "string",
+            "example" : "Screenshot 2025-12-02 at 3.35.38 PM.png"
+          },
+          "fileURL" : {
+            "type" : "string",
+            "example" : "https://static.rainfocus.com/aspeninstitute/health2026/att/1747839747960001Bp40/attprofile/Screenshot%202025-12-02%20at%203.35.38%E2%80%AFPM_1764867516026001LKVK.png"
+          },
+          "fileTypeName" : {
+            "type" : "string",
+            "example": "Attendee Profile Photo"
+          },
+          "fileTypeCode" : {
+            "type" : "string",
+            "example": "attprofile"
+          },
+          "published" : {
+            "type" : "boolean",
+            "example": false
+          }
+        }
+      },
+    
+      "data" : {
+        "properties" : {
+          "language" : {
+            "type" : "string",
+            "example" : "en"
+          },
+          "createDate" : {
+            "type" : "string",
+            "example": "2025-11-04T20:41:50Z"
+          },
+          "modifiedDate" : {
+            "type" : "string",
+            "example" : "2025-12-04T16:58:39Z"
+          },
+          "files" : {
+            "type" : "array",
+            "items" : {
+              "$ref": "#/definitions/file" 
+            }
+          },
+          "registrationId" : {
+            "type" : "string",
+            "example" : "REZ1007"
+          },
+          "badgeId" : {
+            "type" : "string",
+            "example": "1762288910738001PFgS"
+          },
+          "firstname" : {
+            "type" : "string",
+            "example" : "A"
+          },
+          "lastname" : {
+            "type" : "string",
+            "example" : "A"
+          },
+          "email" : {
+            "type" : "string",
+            "example" : "aa@r.com"
+          },
+          "phone" : {
+            "type" : "string",
+            "example": "1111111111"
+          },
+          "attendeeId" : {
+            "type" : "string",
+            "example" : "1747839747960001Bp40"
+          },
+          "registered" : {
+            "type" : "boolean",
+            "example": false 
+          },
+          "viewAccess" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "1761330871537011s0LI"
+            }
+          },
+          "viewFileAccess" : {
+            "type" : "array", 
+            "items" : {
+              "type" : "string",
+              "example" : "1761330871537012s8LZ"
+            }
+          },
+          "scheduleAccess" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "1761330871537012s8LZ"
+            }
+          }, 
+          "attendAccess" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "1761330871537012s8LZ"
+            }
+          },
+          "waitlistAccess" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "1761330871537012s8LZ"
+            }
+          },
+          "inPersonAttendee" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "virtualAttendee" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "schedulerAccess" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "calendarReadOnlyAccess" : {
+            "type" : "boolean",
+            "example" : false 
+          },
+          "meetingAccess" : {
+            "type" : "string",
+            "example" : "0"
+          },
+          "attributeValues" : {
+            "type" : "array",
+            "items" : {
+              "$ref": "#/definitions/attributevalue" 
+            }
+          }
+        } 
+      },
+
+    "getAttendeeDataDump" : {
+      "properties" : {
+        "responseCode" : {
+          "type" : "string",
+          "example": "0" 
+        },
+        "responseMessage" : {
+          "type" : "string",
+          "example": "Success"
+        },
+        "totalSearchItems" : {
+          "type" : "integer",
+          "example" : 14 
+        },
+        "timestamp" : {
+         "type" : "string",
+         "example" : "1764869445689"  
+        },
+        "data" : {
+          "type" : "array", 
+          "items" : {
+            "$ref" : "#/definitions/data"
+          }
+        },
+        "attributes" : {
+          "type" : "array", 
+          "items" : {
+            "$ref" : "#/definitions/attribute"
+          }
+        },
+        "cached" : {
+          "type" : "boolean",
+          "example" : false
+        }
+      }
+    }   
+  }
+}
