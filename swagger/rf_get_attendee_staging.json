@@ -243,6 +243,9 @@
             "type" : "string",
             "example" : "REZ1007"
           },
+          "externalId" : {
+            "type": "string"
+          },
           "badgeId" : {
             "type" : "string",
             "example": "1762288910738001PFgS"
