@@ -8,8 +8,8 @@
     "contact" : null,
     "license" : null
   },
-  "host" : "api.classy.org",
-  "basePath" : "//2.0",
+  "host" : "pro.gofundme.com",
+  "basePath" : "/api/2.0",
   "schemes" : [ "https" ],
   "paths" : {
     "/supporters/{supporter_id}" : {
